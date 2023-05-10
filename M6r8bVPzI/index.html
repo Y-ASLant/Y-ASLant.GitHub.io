@@ -1,0 +1,188 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Note</title>
+<link rel="shortcut icon" href="https://KA-ASLant.GitHub.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://KA-ASLant.GitHub.io/media/css/tailwind.css">
+<link rel="stylesheet" href="https://KA-ASLant.GitHub.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Note - Atom Feed" href="https://KA-ASLant.GitHub.io/atom.xml">
+
+<script async custom-element="amp-iframe"
+  src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  
+    
+
+  <meta name="description" content="温故而知新" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
+  </div>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
+      </a>
+    
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        目录
+      </a>
+    
+      <a href="https://aslant.top/software" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        软件下载
+      </a>
+    
+      <a href="https://news.topurl.cn/" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        每日早读
+      </a>
+    
+      <a href="https://aslant.top/ruA2P2JZr" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        资料&amp;书籍
+      </a>
+    
+      <a href="https://aslant.top/xVDV1cXhO" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        在线游戏
+      </a>
+    
+  </nav>
+</div>
+
+    <div class="max-w-4xl w-full mx-auto pt-32">
+      <h1 class="text-2xl font-bold pb-8 flex justify-center items-center">
+        <i class="ri-hashtag"></i>
+        必备技能
+      </h1>
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+        
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+      <i class="ri-star-line text-orange-200 absolute text-2xl left-0 ml-1 rotate-90"></i>
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://KA-ASLant.GitHub.io/Markdown.EU/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Markdown语言
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022年07月28日  Thursday</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        1. Markdown是什么？
+Markdown是一种轻量级标记语言，它以纯文本形式(易读、易写、易更改)编写文档，并最终以HTML格式发布。
+Markdown也可以理解为将以Markdown语法编写的语言转换成HTML内容的工具，文件格式...
+      </div>
+      <a href="https://KA-ASLant.GitHub.io/Markdown.EU/" class="btn">
+        Reading
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://image.baidu.com/search/down?url=https://tvax3.sinaimg.cn/large/006TZ18hly1hcmtbz7bpzj31xg12inpd.jpg" alt="Markdown语言">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://KA-ASLant.GitHub.io/3PgMH0ewp/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Latex数学符号
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022年07月22日  Friday</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        小写希腊字母 
+
+
+
+符号
+Latex公式
+符号
+Latex公式
+
+
+
+
+α
+\alpha
+λ
+\lambda
+
+
+β
+\beta
+μ
+\mu
+
+
+γ
+\gamma
+ν
+\nu
+
+
+δ
+\delta
+o
+o
+
+
+ϵ
+\epsilon
+υ
+\...
+      </div>
+      <a href="https://KA-ASLant.GitHub.io/3PgMH0ewp/" class="btn">
+        Reading
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://KA-ASLant.GitHub.io/zheng-ze-biao-da-shi/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          正则表达式
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022年07月05日  Tuesday</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        常用语法
+
+**.** - 除换行符以外的所有字符。
+**^** - 字符串开头。
+**$** - 字符串结尾。
+\d,\w,\s - 匹配数字、字符、空格。
+\D,\W,\S - 匹配非数字、非字符、非空格。
+**[abc]** - 匹配...
+      </div>
+      <a href="https://KA-ASLant.GitHub.io/zheng-ze-biao-da-shi/" class="btn">
+        Reading
+      </a>
+    </div>
+    
+  </div>
+  
+      </div>
+
+      
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  
+</footer>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://KA-ASLant.GitHub.io/media/scripts/main.js"></script>
+</body>
+</html>

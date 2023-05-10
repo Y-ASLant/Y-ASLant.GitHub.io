@@ -1,0 +1,561 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Note</title>
+<link rel="shortcut icon" href="https://KA-ASLant.GitHub.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://KA-ASLant.GitHub.io/media/css/tailwind.css">
+<link rel="stylesheet" href="https://KA-ASLant.GitHub.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Note - Atom Feed" href="https://KA-ASLant.GitHub.io/atom.xml">
+
+<script async custom-element="amp-iframe"
+  src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  
+    
+
+  <meta name="description" content="温故而知新" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
+  </div>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
+      </a>
+    
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        目录
+      </a>
+    
+      <a href="https://aslant.top/software" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        软件下载
+      </a>
+    
+      <a href="https://news.topurl.cn/" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        每日早读
+      </a>
+    
+      <a href="https://aslant.top/ruA2P2JZr" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        资料&amp;书籍
+      </a>
+    
+      <a href="https://aslant.top/xVDV1cXhO" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        在线游戏
+      </a>
+    
+  </nav>
+</div>
+
+    <div class="max-w-4xl w-full mx-auto ">
+      
+        <header class="flex py-16 md:py-32 mt-12 flex-col md:flex-row px-4 md:px-0 animated fadeIn">
+  <div class="flex-1 order-2 md:order-1 md:pr-16">
+    <div class="text-4xl font-bold text-center md:text-left">
+      Note
+    </div>
+    <div class="text-xl text-gray-500 mt-4 text-center md:text-left">
+      温故而知新
+    </div>
+    
+      <div class="mt-8 text-center md:text-left">
+        <a
+          href="https://aslant.top/note/" 
+          arget="_blank"
+          class="text-sm bg-yellow-50 dark:bg-indigo-500 dark:text-gray-700 font-semibold px-4 py-2 inline-block yellow-btn transition-fast rounded"
+        >学习笔记</a>
+      </div>
+    
+    
+      <div class="mt-8 flex items-center">
+        
+          <div class="text-gray-500 mr-2">
+            Call me 👉
+          </div>
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+              <a href="https://t.me/ASLant7" target="_blank" class="mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast">
+                <i class="ri-telegram-line"></i>
+              </a>
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+              <a href="11" target="_blank" class="mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast">
+                <i class="ri-qq-line"></i>
+              </a>
+            
+          
+        
+      </div>
+    
+  </div>
+  <div class="md:mx-8 flex-shrink-0 self-start rounded-full border-4 border-dotted border-transparent hover:border-yellow-50 p-2 w-32 h-32 order-1 md:order-2 mx-auto s3-dotted">
+    <img class="rounded-full object-cover" src="https://KA-ASLant.GitHub.io/images/avatar.png?v=1683709487040" alt="Note" width="100%" height="100%">
+  </div>
+</header>
+      
+
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+        
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+      <i class="ri-star-line text-orange-200 absolute text-2xl left-0 ml-1 rotate-90"></i>
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://KA-ASLant.GitHub.io/0lA91SSiA/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          追剧 — 在线电影动漫
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022年07月25日  Monday</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        单击下方红色标题访问 
+强烈建议使用Windows自带的Edge浏览器安装Edge 广告屏蔽插件 访问以下网站，观影效果更佳！！
+(Edge浏览器用户打开此网页可以直接点开红色部分安装)
+
+ -&gt;电 影 先 生
+
+-&gt;555 电...
+      </div>
+      <a href="https://KA-ASLant.GitHub.io/0lA91SSiA/" class="btn">
+        Reading
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://KA-ASLant.GitHub.io/ebtUrB9FE/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Git
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022年11月06日  Sunday</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        初始化仓库
+创建一个空的 git 仓库
+git init
+
+克隆仓库
+克隆仓库到本地
+git clone &lt;server&gt;
+
+仓库连接服务器
+将当前仓库连接到指定的服务器
+git remote add origin &lt;se...
+      </div>
+      <a href="https://KA-ASLant.GitHub.io/ebtUrB9FE/" class="btn">
+        Reading
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://KA-ASLant.GitHub.io/GlBIJuHUF/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          数字电路笔记_1
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022年09月18日  Sunday</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        
+
+
+
+
+
+
+
+
+...
+      </div>
+      <a href="https://KA-ASLant.GitHub.io/GlBIJuHUF/" class="btn">
+        Reading
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://KA-ASLant.GitHub.io/Y4Ufsly_l/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          猴博士-大学课程
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022年08月15日  Monday</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        在线播放
+大学物理
+
+
+01 质点运动学
+
+
+02 常见的力与牛顿三定律
+
+
+03 质心、质心运动定理、角动量守恒
+
+
+04 刚体定轴转动
+
+
+05 角动量守恒
+
+
+06 功和能
+
+
+07 场强与场强的叠加
+
+
+08 积分求场强、电场力
+
+...
+      </div>
+      <a href="https://KA-ASLant.GitHub.io/Y4Ufsly_l/" class="btn">
+        Reading
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://KA-ASLant.GitHub.io/4tp0LuFog/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          C语言超级无敌速成
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022年08月11日  Thursday</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+              
+使用内存
+C被设计为一种低级语言，可以轻松访问内存位置并执行与内存相关的操作。
+例如，scanf() 函数将用户输入的值放在变量的位置或地址处。这是通过使用＆符号实现的。
+例如:
+int num;
+printf(&quot;E...
+      </div>
+      <a href="https://KA-ASLant.GitHub.io/4tp0LuFog/" class="btn">
+        Reading
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://KA-ASLant.GitHub.io/aCFzeEQPp/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Vmware 安装 Mac os 
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022年08月07日  Sunday</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+              
+预览图 1：
+
+预览图 2：
+
+纯小白篇，超详细步骤
+想装黑苹果，结果又不符合黑苹果安装所需的硬件要求，我们可以在虚拟机安装。
+初始虚拟机是不支持安装Mac os的我们需要让它支持！😛
+所需全部文件：
+
+
+解锁工具-让VMw...
+      </div>
+      <a href="https://KA-ASLant.GitHub.io/aCFzeEQPp/" class="btn">
+        Reading
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://KA-ASLant.GitHub.io/GaMlMKaul/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Linux常用命令及详解
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022年08月06日  Saturday</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        ls命令 – 显示指定工作目录下的文件及属性信息
+ls是最常被使用到的Linux命令之一，来自于英文单词list的缩写，也正如list单词的英文意思，其功能是列举出指定目录下的文件名称及其属性。
+默认不加参数的情况下，ls命令会列出当前工作...
+      </div>
+      <a href="https://KA-ASLant.GitHub.io/GaMlMKaul/" class="btn">
+        Reading
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://KA-ASLant.GitHub.io/rzbnedffQ/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Linux 分支
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022年08月06日  Saturday</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+              
+
+在线查看
+...
+      </div>
+      <a href="https://KA-ASLant.GitHub.io/rzbnedffQ/" class="btn">
+        Reading
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://KA-ASLant.GitHub.io/fsBjRNadr/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          C语言入门_4
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022年08月04日  Thursday</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+              
+# C 运算符
+运算符是一种告诉编译器执行特定的数学或逻辑操作的符号。C 语言内置了丰富的运算符，并提供了以下类型的运算符：
+
+算术运算符
+关系运算符
+逻辑运算符
+位运算符
+赋值运算符
+杂项运算符
+
+算术运算符
+下表显示了 C...
+      </div>
+      <a href="https://KA-ASLant.GitHub.io/fsBjRNadr/" class="btn">
+        Reading
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://KA-ASLant.GitHub.io/jbIFtw--1/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Linux从入门到入坟_01
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022年08月04日  Thursday</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+              
+学习之前，最好你电脑上有安装任意一个Linux操作系统。
+除了Arch Linux和 Debian以外，市面上的Linux基本上都是图形化安装界面，很容易安装。
+或可以在虚拟机中安装，参考教程：
+在Vmware16 Pro中安...
+      </div>
+      <a href="https://KA-ASLant.GitHub.io/jbIFtw--1/" class="btn">
+        Reading
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://KA-ASLant.GitHub.io/Buzp2NChO/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          开源镜像站
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022年08月03日  Wednesday</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        清华大学开源镜像
+华为云开源镜像
+腾讯软件源
+北京交通大学开源镜像
+网易开源镜像
+中科大开源镜像
+阿里巴巴开源镜像
+谷歌学术镜像
+...
+      </div>
+      <a href="https://KA-ASLant.GitHub.io/Buzp2NChO/" class="btn">
+        Reading
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://KA-ASLant.GitHub.io/sdsdwsc/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          思维导图
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022年08月03日  Wednesday</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+          
+Matlab基础知识
+
+大物-静电场
+
+贪吃蛇游戏设计思路（C语言）
+
+...
+      </div>
+      <a href="https://KA-ASLant.GitHub.io/sdsdwsc/" class="btn">
+        Reading
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://KA-ASLant.GitHub.io/j8EsT3pbs/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          C语言入门_3
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022年08月02日  Tuesday</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+              
+# C 存储类
+存储类定义 C 程序中变量/函数的范围（可见性）和生命周期。这些说明符放置在它们所修饰的类型之前。
+extern 存储类
+extern 存储类用于提供一个全局变量的引用，全局变量对所有的程序文件都是可见的。当使...
+      </div>
+      <a href="https://KA-ASLant.GitHub.io/j8EsT3pbs/" class="btn">
+        Reading
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://KA-ASLant.GitHub.io/sdUoL-WDt/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          2小时 专注模式
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022年08月02日  Tuesday</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        安静的自习室，专注学习，工作。
+
+
+
+...
+      </div>
+      <a href="https://KA-ASLant.GitHub.io/sdUoL-WDt/" class="btn">
+        Reading
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://KA-ASLant.GitHub.io/1THzJvBhS/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          C语言入门_2
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2022年08月01日  Monday</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        C 变量
+变量要先定义后使用！！！
+
+变量其实只不过是程序可操作的存储区的名称。C 语言中每个变量都有特定的类型，类型决定了变量存储的大小和布局，该范围内的值都可以存储在内存中，运算符可应用于变量上。
+变量的名称可以由字母、数字和下划线字符...
+      </div>
+      <a href="https://KA-ASLant.GitHub.io/1THzJvBhS/" class="btn">
+        Reading
+      </a>
+    </div>
+    
+  </div>
+  
+      </div>
+
+      
+  <div class="my-4 flex justify-between px-4 md:px-0">
+    
+    
+      <a href="https://KA-ASLant.GitHub.io/page/2" class="btn btn-white">
+        下一页
+        <i class="ri-arrow-right-line ml-4"></i>
+      </a>
+    
+  </div>
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  
+</footer>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://KA-ASLant.GitHub.io/media/scripts/main.js"></script>
+</body>
+
+</html>

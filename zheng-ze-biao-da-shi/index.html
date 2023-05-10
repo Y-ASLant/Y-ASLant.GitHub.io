@@ -1,0 +1,509 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>正则表达式 - Note</title>
+<link rel="shortcut icon" href="https://KA-ASLant.GitHub.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://KA-ASLant.GitHub.io/media/css/tailwind.css">
+<link rel="stylesheet" href="https://KA-ASLant.GitHub.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="正则表达式 - Note - Atom Feed" href="https://KA-ASLant.GitHub.io/atom.xml">
+
+<script async custom-element="amp-iframe"
+  src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  
+    
+
+  <meta name="description" content="常用语法
+
+**.** - 除换行符以外的所有字符。
+**^** - 字符串开头。
+**$** - 字符串结尾。
+\d,\w,\s - 匹配数字、字符、空格。
+\D,\W,\S - 匹配非数字、非字符、非空格。
+**[abc]** - 匹配..." />
+  <meta property="og:title" content="正则表达式 - Note">
+  <meta property="og:description" content="常用语法
+
+**.** - 除换行符以外的所有字符。
+**^** - 字符串开头。
+**$** - 字符串结尾。
+\d,\w,\s - 匹配数字、字符、空格。
+\D,\W,\S - 匹配非数字、非字符、非空格。
+**[abc]** - 匹配..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://KA-ASLant.GitHub.io/zheng-ze-biao-da-shi/" />
+  <meta property="og:image" content="https://KA-ASLant.GitHub.io/images/avatar.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="正则表达式 - Note">
+  <meta name="twitter:description" content="常用语法
+
+**.** - 除换行符以外的所有字符。
+**^** - 字符串开头。
+**$** - 字符串结尾。
+\d,\w,\s - 匹配数字、字符、空格。
+\D,\W,\S - 匹配非数字、非字符、非空格。
+**[abc]** - 匹配...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://KA-ASLant.GitHub.io/zheng-ze-biao-da-shi/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://KA-ASLant.GitHub.io/media/css/prism-atom-dark.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://KA-ASLant.GitHub.io" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      Note
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          正则表达式
+        </h1>
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2022年07月05日  Tuesday · 6 min read</div>
+          
+            <a href="https://KA-ASLant.GitHub.io/M6r8bVPzI/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              必备技能
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h1 id="常用语法">常用语法</h1>
+<ul>
+<li><code>**.**</code> - 除换行符以外的所有字符。</li>
+<li><code>**^**</code> - 字符串开头。</li>
+<li><code>**$**</code> - 字符串结尾。</li>
+<li><strong><code>\d</code>,<code>\w</code>,<code>\s</code></strong> - 匹配数字、字符、空格。</li>
+<li><strong><code>\D</code>,<code>\W</code>,<code>\S</code></strong> - 匹配非数字、非字符、非空格。</li>
+<li><code>**[abc]**</code> - 匹配 a、b 或 c 中的一个字母。</li>
+<li><code>**[a-z]**</code> - 匹配 a 到 z 中的一个字母。</li>
+<li><code>**[^abc]**</code> - 匹配除了 a、b 或 c 中的其他字母。</li>
+<li><code>**aa|bb**</code> - 匹配 aa 或 bb。</li>
+<li><code>**?**</code> - 0 次或 1 次匹配。</li>
+<li><code>*****</code> - 匹配 0 次或多次。</li>
+<li><code>**+**</code> - 匹配 1 次或多次。</li>
+<li><code>**{\*n\*}**</code> - 匹配 <em>n</em>次。</li>
+<li><code>**{\*n\*,}**</code> - 匹配 <em>n</em>次以上。</li>
+<li><code>**{\*m\*,\*n\*}**</code> - 最少 <em>m</em> 次，最多 <em>n</em> 次匹配。</li>
+<li><strong><code>(</code>*expr*<code>)</code></strong> - 捕获 <em>expr</em> 子模式,以 <code>\1</code> 使用它。</li>
+<li><strong><code>(?:</code>*expr*<code>)</code></strong> - 忽略捕获的子模式。</li>
+<li><strong><code>(?=</code>*expr*<code>)</code></strong> - 正向预查模式 <em>expr</em>。</li>
+<li><strong><code>(?!</code>*expr*<code>)</code></strong> - 负向预查模式 <em>expr</em>。</li>
+</ul>
+<h1 id="创建正则">创建正则</h1>
+<h2 id="字面量创建">字面量创建</h2>
+<p>使用<code>//</code>包裹的字面量创建方式是推荐的作法，但它不能在其中使用变量</p>
+<pre><code class="language-js">let hd = &quot;houdunren.com&quot;;
+console.log(/u/.test(hd));//true
+</code></pre>
+<p>下面尝试使用 <code>a</code> 变量时将不可以查询</p>
+<pre><code class="language-js">let hd = &quot;houdunren.com&quot;;
+let a = &quot;u&quot;;
+console.log(/a/.test(hd)); //false
+</code></pre>
+<p>虽然可以使用 <code>eval</code> 转换为js语法来实现将变量解析到正则中，但是比较麻烦，所以有变量时建议使用下面的对象创建方式</p>
+<pre><code class="language-js">let hd = &quot;houdunren.com&quot;;
+let a = &quot;u&quot;;
+console.log(eval(`/${a}/`).test(hd)); //true
+</code></pre>
+<h2 id="对象创建">对象创建</h2>
+<p>当正则需要动态创建时使用对象方式</p>
+<pre><code class="language-js">let hd = &quot;houdunren.com&quot;;
+let web = &quot;houdunren&quot;;
+let reg = new RegExp(web);
+console.log(reg.test(hd)); //true
+</code></pre>
+<p>根据用户输入高亮显示内容，支持用户输入正则表达式</p>
+<pre><code class="language-html">&lt;body&gt;
+  &lt;div id=&quot;content&quot;&gt;houdunren.com&lt;/div&gt;
+&lt;/body&gt;
+&lt;script&gt;
+  const content = prompt(&quot;请输入要搜索的内容，支持正则表达式&quot;);
+  const reg = new RegExp(content, &quot;g&quot;);
+  let body = document
+    .querySelector(&quot;#content&quot;)
+    .innerHTML.replace(reg, str =&gt; {
+      return `&lt;span style=&quot;color:red&quot;&gt;${str}&lt;/span&gt;`;
+    });
+  document.body.innerHTML = body;
+&lt;/script&gt;
+</code></pre>
+<p>通过对象创建正则提取标签</p>
+<pre><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;houdunren.com&lt;/h1&gt;
+  &lt;h1&gt;hdcms.com&lt;/h1&gt;
+&lt;/body&gt;
+
+&lt;script&gt;
+function element(tag) {
+  const html = document.body.innerHTML;
+  let reg = new RegExp(&quot;&lt;(&quot; + tag + &quot;)&gt;.+&lt;/\\1&gt;&quot;, &quot;g&quot;);
+  return html.match(reg);
+}
+console.table(element(&quot;h1&quot;));
+</code></pre>
+<h1 id="选择符">选择符</h1>
+<p><code>|</code> 这个符号带表选择修释符，也就是 <code>|</code> 左右两侧有一个匹配到就可以。</p>
+<p>检测电话是否是上海或北京的坐机</p>
+<pre><code class="language-js">let tel = &quot;010-12345678&quot;;
+//错误结果：只匹配 | 左右两边任一结果
+console.log(tel.match(/010|020\-\d{7,8}/)); 
+
+//正确结果：所以需要放在原子组中使用
+console.log(tel.match(/(010|020)\-\d{7,8}/));
+</code></pre>
+<p>匹配字符是否包含<code>houdunren</code> 或 <code>hdcms</code></p>
+<pre><code class="language-js">const hd = &quot;houdunren&quot;;
+console.log(/houdunren|hdcms/.test(hd)); //true
+</code></pre>
+<h1 id="字符转义">字符转义</h1>
+<p>转义用于改变字符的含义，用来对某个字符有多种语义时的处理。</p>
+<p>假如有这样的场景，如果我们想通过正则查找<code>/</code>符号，但是 <code>/</code>在正则中有特殊的意义。如果写成<code>///</code>这会造成解析错误，所以要使用转义语法 <code>/\//</code>来匹配。</p>
+<pre><code class="language-js">const url = &quot;https://www.houdunren.com&quot;;
+console.log(/https:\/\//.test(url)); //true
+</code></pre>
+<p>使用 <code>RegExp</code> 构建正则时在转义上会有些区别，下面是对象与字面量定义正则时区别</p>
+<pre><code class="language-js">let price = 12.23;
+//含义1: . 除换行外任何字符 	含义2: .普通点
+//含义1: d 字母d   					含义2: \d 数字 0~9
+console.log(/\d+\.\d+/.test(price));
+
+//字符串中 \d 与 d 是一样的，所以在 new RegExp 时\d 即为 d
+console.log(&quot;\d&quot; == &quot;d&quot;);
+
+//使用对象定义正则时，可以先把字符串打印一样，结果是字面量一样的定义就对了
+console.log(&quot;\\d+\\.\\d+&quot;);
+let reg = new RegExp(&quot;\\d+\\.\\d+&quot;);
+console.log(reg.test(price));
+</code></pre>
+<p>下面是网址检测中转义符使用</p>
+<pre><code class="language-js">let url = &quot;https://www.houdunren.com&quot;;
+console.log(/https?:\/\/\w+\.\w+\.\w+/.test(url));
+</code></pre>
+<h1 id="字符边界">字符边界</h1>
+<p>使用字符边界符用于控制匹配内容的开始与结束约定。</p>
+<table>
+<thead>
+<tr>
+<th>边界符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>^</td>
+<td>匹配字符串的开始</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配字符串的结束，忽略换行符</td>
+</tr>
+</tbody>
+</table>
+<p>匹配内容必须以<code>www</code>开始</p>
+<pre><code class="language-js">const hd = &quot;www.houdunren.com&quot;;
+console.log(/^www/.test(hd)); //true
+</code></pre>
+<p>匹配内容必须以<code>.com</code>结束</p>
+<pre><code class="language-js">const hd = &quot;www.houdunren.com&quot;;
+console.log(/\.com$/.test(hd)); //true
+</code></pre>
+<p>检测用户名长度为3~6位，且只能为字母。如果不使用 <code>^与$</code> 限制将得不到正确结果</p>
+<pre><code class="language-html">&lt;body&gt;
+  &lt;input type=&quot;text&quot; name=&quot;username&quot; /&gt;
+&lt;/body&gt;
+
+&lt;script&gt;
+  document
+    .querySelector(`[name=&quot;username&quot;]`)
+    .addEventListener(&quot;keyup&quot;, function() {
+      let res = this.value.match(/^[a-z]{3,6}$/i);
+      console.log(res);
+      console.log(res ? &quot;正确&quot; : &quot;失败&quot;);
+    });
+&lt;/script&gt;
+</code></pre>
+<h1 id="元子字符">元子字符</h1>
+<p>元字符是正则表达式中的最小元素，只代表单一（一个）字符</p>
+<h1 id="字符列表">字符列表</h1>
+<table>
+<thead>
+<tr>
+<th>元字符</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\d</td>
+<td>匹配任意一个数字</td>
+<td>[0-9]</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>与除了数字以外的任何一个字符匹配</td>
+<td>[^0-9]</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>与任意一个英文字母,数字或下划线匹配</td>
+<td>[a-zA-Z_]</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>除了字母,数字或下划线外与任何字符匹配</td>
+<td>[^a-zA-Z_]</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>任意一个空白字符匹配，如空格，制表符<code>\t</code>，换行符<code>\n</code></td>
+<td>[\n\f\r\t\v]</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>除了空白符外任意一个字符匹配</td>
+<td>[^\n\f\r\t\v]</td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配除换行符外的任意字符</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li><a href="#%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95">常用语法</a></li>
+<li><a href="#%E5%88%9B%E5%BB%BA%E6%AD%A3%E5%88%99">创建正则</a>
+<ul>
+<li><a href="#%E5%AD%97%E9%9D%A2%E9%87%8F%E5%88%9B%E5%BB%BA">字面量创建</a></li>
+<li><a href="#%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA">对象创建</a></li>
+</ul>
+</li>
+<li><a href="#%E9%80%89%E6%8B%A9%E7%AC%A6">选择符</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E8%BD%AC%E4%B9%89">字符转义</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E8%BE%B9%E7%95%8C">字符边界</a></li>
+<li><a href="#%E5%85%83%E5%AD%90%E5%AD%97%E7%AC%A6">元子字符</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E5%88%97%E8%A1%A8">字符列表</a></li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://KA-ASLant.GitHub.io/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://KA-ASLant.GitHub.io/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+  
+</body>
+
+</html>

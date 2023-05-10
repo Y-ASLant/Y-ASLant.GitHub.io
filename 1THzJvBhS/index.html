@@ -1,0 +1,583 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>C语言入门_2 - Note</title>
+<link rel="shortcut icon" href="https://KA-ASLant.GitHub.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://KA-ASLant.GitHub.io/media/css/tailwind.css">
+<link rel="stylesheet" href="https://KA-ASLant.GitHub.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="C语言入门_2 - Note - Atom Feed" href="https://KA-ASLant.GitHub.io/atom.xml">
+
+<script async custom-element="amp-iframe"
+  src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  
+    
+
+  <meta name="description" content="C 变量
+变量要先定义后使用！！！
+
+变量其实只不过是程序可操作的存储区的名称。C 语言中每个变量都有特定的类型，类型决定了变量存储的大小和布局，该范围内的值都可以存储在内存中，运算符可应用于变量上。
+变量的名称可以由字母、数字和下划线字符..." />
+  <meta property="og:title" content="C语言入门_2 - Note">
+  <meta property="og:description" content="C 变量
+变量要先定义后使用！！！
+
+变量其实只不过是程序可操作的存储区的名称。C 语言中每个变量都有特定的类型，类型决定了变量存储的大小和布局，该范围内的值都可以存储在内存中，运算符可应用于变量上。
+变量的名称可以由字母、数字和下划线字符..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://KA-ASLant.GitHub.io/1THzJvBhS/" />
+  <meta property="og:image" content="https://KA-ASLant.GitHub.io/images/avatar.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="C语言入门_2 - Note">
+  <meta name="twitter:description" content="C 变量
+变量要先定义后使用！！！
+
+变量其实只不过是程序可操作的存储区的名称。C 语言中每个变量都有特定的类型，类型决定了变量存储的大小和布局，该范围内的值都可以存储在内存中，运算符可应用于变量上。
+变量的名称可以由字母、数字和下划线字符...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://KA-ASLant.GitHub.io/1THzJvBhS/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://KA-ASLant.GitHub.io/media/css/prism-atom-dark.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://KA-ASLant.GitHub.io" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      Note
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          C语言入门_2
+        </h1>
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2022年08月01日  Monday · 8 min read</div>
+          
+            <a href="https://KA-ASLant.GitHub.io/WXJ9bL2_N/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              编程语言
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h1 id="c-变量">C 变量</h1>
+<h2 id="变量要先定义后使用">变量要先定义后使用！！！</h2>
+<ul>
+<li>变量其实只不过是程序可操作的存储区的名称。C 语言中每个变量都有特定的类型，类型决定了变量存储的大小和布局，该范围内的值都可以存储在内存中，运算符可应用于变量上。</li>
+<li>变量的名称可以由字母、数字和下划线字符组成。它<strong>必须以字母或下划线开头</strong>。大写字母和小写字母是不同的,常见的有以下几种基本的变量类型：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">char</td>
+<td style="text-align:left">通常是一个字节（八位）, 这是一个整数类型。</td>
+</tr>
+<tr>
+<td style="text-align:left">int</td>
+<td style="text-align:left">整型，4 个字节，取值范围 -2147483648 到 2147483647。</td>
+</tr>
+<tr>
+<td style="text-align:left">float</td>
+<td style="text-align:left">单精度浮点值。</td>
+</tr>
+<tr>
+<td style="text-align:left">double</td>
+<td style="text-align:left">双精度浮点值。</td>
+</tr>
+<tr>
+<td style="text-align:left">void</td>
+<td style="text-align:left">表示类型的缺失。</td>
+</tr>
+</tbody>
+</table>
+<p>C 语言也允许定义各种其他类型的变量，比如枚举、指针、数组、结构、共用体等。</p>
+<pre><code class="language-c">int    i, j, k;//定义整型变量i j k
+char   c, ch;//定义字符型变量c ch
+float  f, sa;//定义单精度浮点型变量f sa
+double d;//定义双精度浮点型变量d
+</code></pre>
+<h2 id="c-中的变量声明">C 中的变量声明</h2>
+<p>变量声明向编译器保证变量以指定的类型和名称存在，这样编译器在不需要知道变量完整细节的情况下也能继续进一步的编译。变量声明只在编译时有它的意义，在程序连接时编译器需要实际的变量声明。</p>
+<p>变量的声明有两种情况：</p>
+<ul>
+<li>1、一种是需要建立存储空间的。例如：int a 在声明的时候就已经建立了存储空间。</li>
+<li>2、另一种是不需要建立存储空间的，通过使用extern关键字声明变量名而不定义它。 例如：extern int a 其中变量 a 可以在别的文件中定义的。</li>
+<li>注意：<strong>除非有extern关键字，否则其余都是变量的定义。</strong></li>
+</ul>
+<pre><code class="language-c">extern int i; //声明，不是定义   
+
+/*extern的作用是用来说明此变量/函数是在别处定义的，要在此处引用
+在一个c工程中如果文件a.c需要引用b.c中变量int v，那么就可以在a.c中声明extern int v
+然后就可以直接引用变量v了。*/
+
+int i; //既是声明，也是定义
+</code></pre>
+<h2 id="c-中的左值和右值">C 中的左值和右值</h2>
+<p>C 中有两种类型的表达式：</p>
+<ol>
+<li>**左值（lvalue）：**指向内存位置的表达式被称为左值（lvalue）表达式。<strong>左值可以出现在赋值号（=）的左边或右边。</strong></li>
+<li>**右值（rvalue）：**术语右值（rvalue）指的是存储在内存中某些地址的数值。右值是不能对其进行赋值的表达式，也就是说，<strong>右值只可以出现在赋值号的右边。</strong></li>
+</ol>
+<ul>
+<li>变量是左值，因此可以出现在赋值号的左边。数值型的字面值是右值，因此不能被赋值，不能出现在赋值号的左边。下面是一个有效的语句：</li>
+</ul>
+<pre><code class="language-c">int g = 20;//把20赋值给整型变量g
+</code></pre>
+<p>但是下面这两个都<strong>不是有效的语句</strong>，会生成编译时错误：</p>
+<pre><code class="language-c">10 = 20;//错误例子   右值只可以出现在赋值号的右边。
+</code></pre>
+<pre><code class="language-c">int 20=g;//错误例子  右值只可以出现在赋值号的右边。
+</code></pre>
+<h1 id="c-常量">C 常量</h1>
+<p>常量是固定值，在程序执行期间不会改变。这些固定的值，又叫做<strong>字面量</strong>。</p>
+<p>常量可以是任何的基本数据类型，比如整数常量、浮点常量、字符常量，或字符串字面值，也有枚举常量。</p>
+<p><strong>常量</strong>就像是常规的变量，<strong>常量的值在定义后不能进行修改。</strong></p>
+<h2 id="整数常量">整数常量</h2>
+<p><strong>整数常量可以是十进制、八进制或十六进制的常量。</strong></p>
+<p>根据<strong>前缀</strong>判断进制：</p>
+<ul>
+<li>0x 或 0X 表示十六进制</li>
+<li>0 表示八进制</li>
+<li>不带前缀则默认表示十进制。</li>
+</ul>
+<p>整数常量也可以带一个后缀，后缀是 U 和 L 的组合，U 表示无符号整数（unsigned），L 表示长整数（long）。后缀可以是大写，也可以是小写，U 和 L 的顺序任意。</p>
+<p>下面列举几个整数常量的实例：</p>
+<pre><code class="language-c">212         /* 合法的 */
+215u        /* 合法的 */
+0xFeeL      /* 合法的 */
+0xGafL      /* 非法的：G 不是十六进制  十六进制是从0到9加上abcdef组成的  0最小f最大*/
+078         /* 非法的：8 不是八进制的数字 */
+032UU       /* 非法的：不能重复后缀 */
+</code></pre>
+<p>以下是各种类型的整数常量的实例：</p>
+<pre><code class="language-c">85         /* 十进制 */
+0213       /* 八进制 */
+0x4b       /* 十六进制 */
+30         /* 十进制整数 */
+30u        /* 无符号整数 */
+30l        /* 长整数 */
+30ul       /* 无符号长整数 */
+</code></pre>
+<h2 id="浮点常量">浮点常量</h2>
+<p><strong>浮点常量由整数部分、小数点、小数部分和指数部分组成。</strong></p>
+<p>可以使用<strong>小数形式或者指数</strong>形式来表示浮点常量。</p>
+<ul>
+<li>
+<p>当使用小数形式表示时，必须包含整数部分、小数部分，或同时包含两者。</p>
+</li>
+<li>
+<p>当使用指数形式表示时， 必须包含小数点、指数，或同时包含两者。带符号的指数是用 e 或 E 引入的。</p>
+<h2 id="e前e后必有数e后必须为整数">e前e后必有数，e后必须为整数！！！</h2>
+</li>
+</ul>
+<p>下面列举几个浮点常量的实例：</p>
+<pre><code class="language-c">20.0f         /* 合法的 */
+3.14159       /* 合法的 */
+314159E-5L    /* 合法的 */
+510E          /* 非法的：不完整的指数   e前e后必有数，e后必须为整数 */
+210f          /* 非法的：没有小数或指数 */
+.e55          /* 非法的：缺少整数或分数  e前e后必有数，e后必须为整数 */
+</code></pre>
+<h2 id="字符常量">字符常量</h2>
+<p>字符常量是括在<strong>单引号中</strong>，例如，'x' 可以存储在 <strong>char</strong> 类型的简单变量中。</p>
+<p>字符常量可以是一个普通的字符（例如 'x'）、一个转义序列（例如 '\t'），或一个通用的字符（例如 '\u02C0'）。</p>
+<p>在 C 中，有一些特定的字符，当它们前面有反斜杠时，它们就具有特殊的含义，被用来表示如换行符（\n）或制表符（\t）等。</p>
+<h2 id="常见转义字符">常见转义字符</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">转义序列</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\</td>
+<td style="text-align:left">续行符</td>
+</tr>
+<tr>
+<td style="text-align:left">'</td>
+<td style="text-align:left">' 字符</td>
+</tr>
+<tr>
+<td style="text-align:left">&quot;</td>
+<td style="text-align:left">&quot; 字符</td>
+</tr>
+<tr>
+<td style="text-align:left">?</td>
+<td style="text-align:left">? 字符</td>
+</tr>
+<tr>
+<td style="text-align:left">\a</td>
+<td style="text-align:left">警报铃声</td>
+</tr>
+<tr>
+<td style="text-align:left">\b</td>
+<td style="text-align:left">退格键</td>
+</tr>
+<tr>
+<td style="text-align:left">\f</td>
+<td style="text-align:left">换页符</td>
+</tr>
+<tr>
+<td style="text-align:left">\n</td>
+<td style="text-align:left">换行符</td>
+</tr>
+<tr>
+<td style="text-align:left">\r</td>
+<td style="text-align:left">回车</td>
+</tr>
+<tr>
+<td style="text-align:left">\t</td>
+<td style="text-align:left">水平制表符</td>
+</tr>
+<tr>
+<td style="text-align:left">\v</td>
+<td style="text-align:left">垂直制表符</td>
+</tr>
+<tr>
+<td style="text-align:left">\ooo</td>
+<td style="text-align:left">一到三位的八进制数</td>
+</tr>
+<tr>
+<td style="text-align:left">\xhh . . .</td>
+<td style="text-align:left">一个或多个数字的十六进制数</td>
+</tr>
+</tbody>
+</table>
+<h2 id="例">例</h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt; 
+int main() 
+{   
+    printf(&quot;Hello\tWorld\n\n&quot;); //\t Tab    \n换行
+    return 0;
+}
+</code></pre>
+<p>当上面的代码被编译和执行后，它会产生下列结果：</p>
+<pre><code>Hello World
+
+
+</code></pre>
+<h2 id="字符串常量">字符串常量</h2>
+<p>字符串字面值或常量是括在<strong>双引号</strong>中的。</p>
+<p>一个字符串可以包含类似于字符常量的字符：</p>
+<ul>
+<li>普通的字符</li>
+<li>转义序列</li>
+<li>通用的字符</li>
+</ul>
+<p>中间可以使用空格做分隔符，把一个很长的字符串常量进行分隔。</p>
+<p>下面的实例显示了一些字符串常量。<strong>下面这三种形式所显示的字符串是相同的。</strong></p>
+<pre><code class="language-c">&quot;hello, dear&quot;
+
+&quot;hello, \
+
+dear&quot;
+
+&quot;hello, &quot; &quot;d&quot; &quot;ear&quot;
+</code></pre>
+<p>它们的都是<code>hello，dear</code></p>
+<h2 id="定义常量">定义常量</h2>
+<p>在 C 中，有两种简单的定义常量的方式：</p>
+<ol>
+<li>使用 <strong>#define</strong> 预处理器。宏定义</li>
+<li>使用 <strong>const</strong> 关键字。</li>
+</ol>
+<h3 id="define-预处理器">#define 预处理器</h3>
+<p>下面是使用 #define 预处理器定义常量的形式：</p>
+<pre><code class="language-c">#define 变量名 变量值
+</code></pre>
+<pre><code class="language-c">#include &lt;stdio.h&gt;  
+#define chang 10    
+#define kuan  5 
+#define huanhang '\n'  //定义转义字符
+int main() 
+{    
+    int area;       
+    area = cahng * kuan;  
+    printf(&quot;面积为 : %d&quot;, area);   
+    printf(&quot;%c&quot;, huanhang);    
+    return 0; 
+}
+</code></pre>
+<p>当上面的代码被编译和执行时，它会产生下列结果：</p>
+<pre><code class="language-c">面积为 : 50
+
+</code></pre>
+<h3 id="const-关键字">const 关键字</h3>
+<p>您可以使用 <strong>const</strong> 前缀声明指定类型的常量，如下所示：</p>
+<pre><code class="language-c">const 数据类型 变量名 = 变量值;
+</code></pre>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+ 
+int main()
+{
+   const int  chang = 10;
+   const int  kuan  = 5;
+   const char huanhang = '\n';
+   int area;  
+   
+   area = chang * kuan;
+   printf(&quot;面积为 : %d&quot;, area);
+   printf(&quot;%c&quot;, huanhang);
+   return 0;
+}
+</code></pre>
+<p>当上面的代码被编译和执行时，它会产生下列结果：</p>
+<pre><code class="language-c">面积为 : 50
+
+</code></pre>
+<h2 id="两种定义均可">两种定义均可！！！</h2>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li><a href="#c-%E5%8F%98%E9%87%8F">C 变量</a>
+<ul>
+<li><a href="#%E5%8F%98%E9%87%8F%E8%A6%81%E5%85%88%E5%AE%9A%E4%B9%89%E5%90%8E%E4%BD%BF%E7%94%A8">变量要先定义后使用！！！</a></li>
+<li><a href="#c-%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E">C 中的变量声明</a></li>
+<li><a href="#c-%E4%B8%AD%E7%9A%84%E5%B7%A6%E5%80%BC%E5%92%8C%E5%8F%B3%E5%80%BC">C 中的左值和右值</a></li>
+</ul>
+</li>
+<li><a href="#c-%E5%B8%B8%E9%87%8F">C 常量</a>
+<ul>
+<li><a href="#%E6%95%B4%E6%95%B0%E5%B8%B8%E9%87%8F">整数常量</a></li>
+<li><a href="#%E6%B5%AE%E7%82%B9%E5%B8%B8%E9%87%8F">浮点常量</a></li>
+<li><a href="#e%E5%89%8De%E5%90%8E%E5%BF%85%E6%9C%89%E6%95%B0e%E5%90%8E%E5%BF%85%E9%A1%BB%E4%B8%BA%E6%95%B4%E6%95%B0">e前e后必有数，e后必须为整数！！！</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E5%B8%B8%E9%87%8F">字符常量</a></li>
+<li><a href="#%E5%B8%B8%E8%A7%81%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6">常见转义字符</a></li>
+<li><a href="#%E4%BE%8B">例</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F">字符串常量</a></li>
+<li><a href="#%E5%AE%9A%E4%B9%89%E5%B8%B8%E9%87%8F">定义常量</a>
+<ul>
+<li><a href="#define-%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8">#define 预处理器</a></li>
+<li><a href="#const-%E5%85%B3%E9%94%AE%E5%AD%97">const 关键字</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%A4%E7%A7%8D%E5%AE%9A%E4%B9%89%E5%9D%87%E5%8F%AF">两种定义均可！！！</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://KA-ASLant.GitHub.io/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://KA-ASLant.GitHub.io/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+  
+</body>
+
+</html>

@@ -1,0 +1,749 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>C语言入门_1 - Note</title>
+<link rel="shortcut icon" href="https://KA-ASLant.GitHub.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://KA-ASLant.GitHub.io/media/css/tailwind.css">
+<link rel="stylesheet" href="https://KA-ASLant.GitHub.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="C语言入门_1 - Note - Atom Feed" href="https://KA-ASLant.GitHub.io/atom.xml">
+
+<script async custom-element="amp-iframe"
+  src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  
+    
+
+  <meta name="description" content="C语言
+C程序结构主要包括：
+
+
+
+预处理器指令
+函数
+变量
+语句 和 表达式
+注释
+
+
+
+以输出 Hello World! 为例
+#include &amp;lt;stdio.h&amp;gt;
+int main()
+{
+   /* 这是我的第一个 C ..." />
+  <meta property="og:title" content="C语言入门_1 - Note">
+  <meta property="og:description" content="C语言
+C程序结构主要包括：
+
+
+
+预处理器指令
+函数
+变量
+语句 和 表达式
+注释
+
+
+
+以输出 Hello World! 为例
+#include &amp;lt;stdio.h&amp;gt;
+int main()
+{
+   /* 这是我的第一个 C ..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://KA-ASLant.GitHub.io/c1/" />
+  <meta property="og:image" content="https://KA-ASLant.GitHub.io/images/avatar.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="C语言入门_1 - Note">
+  <meta name="twitter:description" content="C语言
+C程序结构主要包括：
+
+
+
+预处理器指令
+函数
+变量
+语句 和 表达式
+注释
+
+
+
+以输出 Hello World! 为例
+#include &amp;lt;stdio.h&amp;gt;
+int main()
+{
+   /* 这是我的第一个 C ...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://KA-ASLant.GitHub.io/c1/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://KA-ASLant.GitHub.io/media/css/prism-atom-dark.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://KA-ASLant.GitHub.io" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      Note
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          C语言入门_1
+        </h1>
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2022年07月31日  Sunday · 8 min read</div>
+          
+            <a href="https://KA-ASLant.GitHub.io/WXJ9bL2_N/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              编程语言
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h1 id="c语言">C语言</h1>
+<h2 id="c程序结构主要包括">C程序结构主要包括：</h2>
+<blockquote>
+<blockquote>
+<ul>
+<li>预处理器指令</li>
+<li>函数</li>
+<li>变量</li>
+<li>语句 和 表达式</li>
+<li>注释</li>
+</ul>
+</blockquote>
+</blockquote>
+<p>以输出 <code>Hello World!</code> 为例</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main()
+{
+   /* 这是我的第一个 C 程序 */
+   printf(&quot;Hello, World! \n&quot;);  
+   return 0;
+}
+</code></pre>
+<ul>
+<li>其中程序的第一行 <code>#include &lt;stdio.h&gt;</code> 是预处理器指令，告诉 C 编译器在实际编译之前要包含 <code>stdio.h </code>这个头文件。</li>
+<li>下一行 <code>int main()</code>是主函数，程序从这里开始执行。</li>
+<li>下一行<code> /*.  .*/</code> 之间的内容将会被编译器忽略，这里放置程序的注释内容。它们被称为程序的注释。</li>
+<li>下一行 <code>printf(...)</code>; 是 C 中另一个可用的函数，会在屏幕上显示消息 &quot;Hello, World!&quot;。</li>
+<li>下一行 <code>return 0;</code> 终止 <code>main() </code>函数，并返回值 <code>0</code>。</li>
+</ul>
+<h2 id="c语言常见关键字">C语言常见关键字</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">关键字</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">auto</td>
+<td style="text-align:left">声明自动变量</td>
+</tr>
+<tr>
+<td style="text-align:left">break</td>
+<td style="text-align:left">跳出当前循环</td>
+</tr>
+<tr>
+<td style="text-align:left">case</td>
+<td style="text-align:left">开关语句分支</td>
+</tr>
+<tr>
+<td style="text-align:left">char</td>
+<td style="text-align:left">声明字符型变量或函数返回值类型</td>
+</tr>
+<tr>
+<td style="text-align:left">const</td>
+<td style="text-align:left">定义常量，如果一个变量被 const 修饰，那么它的值就不能再被改变</td>
+</tr>
+<tr>
+<td style="text-align:left">continue</td>
+<td style="text-align:left">结束当前循环，开始下一轮循环</td>
+</tr>
+<tr>
+<td style="text-align:left">default</td>
+<td style="text-align:left">开关语句中的&quot;其它&quot;分支</td>
+</tr>
+<tr>
+<td style="text-align:left">do</td>
+<td style="text-align:left">循环语句的循环体</td>
+</tr>
+<tr>
+<td style="text-align:left">double</td>
+<td style="text-align:left">声明双精度浮点型变量或函数返回值类型</td>
+</tr>
+<tr>
+<td style="text-align:left">else</td>
+<td style="text-align:left">条件语句否定分支（与 if 连用）</td>
+</tr>
+<tr>
+<td style="text-align:left">enum</td>
+<td style="text-align:left">声明枚举类型</td>
+</tr>
+<tr>
+<td style="text-align:left">extern</td>
+<td style="text-align:left">声明变量或函数是在其它文件或本文件的其他位置定义</td>
+</tr>
+<tr>
+<td style="text-align:left">float</td>
+<td style="text-align:left">声明浮点型变量或函数返回值类型</td>
+</tr>
+<tr>
+<td style="text-align:left">for</td>
+<td style="text-align:left">一种循环语句</td>
+</tr>
+<tr>
+<td style="text-align:left">goto</td>
+<td style="text-align:left">无条件跳转语句</td>
+</tr>
+<tr>
+<td style="text-align:left">if</td>
+<td style="text-align:left">条件语句</td>
+</tr>
+<tr>
+<td style="text-align:left">int</td>
+<td style="text-align:left">声明整型变量或函数</td>
+</tr>
+<tr>
+<td style="text-align:left">long</td>
+<td style="text-align:left">声明长整型变量或函数返回值类型</td>
+</tr>
+<tr>
+<td style="text-align:left">return</td>
+<td style="text-align:left">子程序返回语句（可以带参数，也可不带参数）</td>
+</tr>
+<tr>
+<td style="text-align:left">short</td>
+<td style="text-align:left">声明短整型变量或函数</td>
+</tr>
+<tr>
+<td style="text-align:left">signed</td>
+<td style="text-align:left">声明有符号类型变量或函数</td>
+</tr>
+<tr>
+<td style="text-align:left">sizeof</td>
+<td style="text-align:left">计算数据类型或变量长度（即所占字节数）</td>
+</tr>
+<tr>
+<td style="text-align:left">static</td>
+<td style="text-align:left">声明静态变量</td>
+</tr>
+<tr>
+<td style="text-align:left">struct</td>
+<td style="text-align:left">声明结构体类型</td>
+</tr>
+<tr>
+<td style="text-align:left">switch</td>
+<td style="text-align:left">用于开关语句</td>
+</tr>
+<tr>
+<td style="text-align:left">typedef</td>
+<td style="text-align:left">用以给数据类型取别名</td>
+</tr>
+<tr>
+<td style="text-align:left">unsigned</td>
+<td style="text-align:left">声明无符号类型变量或函数</td>
+</tr>
+<tr>
+<td style="text-align:left">union</td>
+<td style="text-align:left">声明共用体类型</td>
+</tr>
+<tr>
+<td style="text-align:left">void</td>
+<td style="text-align:left">声明函数无返回值或无参数，声明无类型指针</td>
+</tr>
+<tr>
+<td style="text-align:left">volatile</td>
+<td style="text-align:left">说明变量在程序执行中可被隐含地改变</td>
+</tr>
+<tr>
+<td style="text-align:left">while</td>
+<td style="text-align:left">循环语句的循环条件</td>
+</tr>
+</tbody>
+</table>
+<h1 id="c-基本框架">C 基本框架</h1>
+<p>C 程序由是关键字、标识符、常量、字符串值、注释，或者是一个符号所组成。例如，下面的 C 语句：</p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+int main()
+{
+    return 0;
+}
+</code></pre>
+<h2 id="分号">分号 ;</h2>
+<ul>
+<li>在 C 程序中，<code>具有严格的语法要求</code>，分号是语句结束符。也就是说，每个语句必须以<code>分号</code>结束。它表明一个逻辑实体的结束。</li>
+<li>下面表示两个不同的语句。</li>
+</ul>
+<pre><code class="language-c">printf(&quot;Hello, World! \n&quot;);
+return 0;
+</code></pre>
+<h2 id="注释">注释</h2>
+<p><strong>C 语言有两种注释方式：</strong></p>
+<pre><code class="language-c">// 单行注释
+</code></pre>
+<p>以 <code>//</code>开始的单行注释，这种注释单独占一行。</p>
+<pre><code class="language-c">/* 单行注释 */
+/* 
+ 多行注释
+ 多行注释
+ 多行注释
+ */
+</code></pre>
+<p><strong>/* */</strong> 这种格式的注释可以单行或多行了，而**//**只能单行。注释内部不能嵌套注释！</p>
+<h2 id="标识符">标识符</h2>
+<p>C 标识符是用来标识变量、函数，或任何其他用户自定义项目的名称。</p>
+<ul>
+<li>
+<p>一个标识符以字母 A-Z 或 a-z 或下划线 _ 开始，后跟零个或多个字母、下划线和数字（0-9）。</p>
+</li>
+<li>
+<p>C 标识符内不允许出现标点字符，比如 @、$ 和 %。C 是<strong>区分大小写</strong>的编程语言。因此，在 C 语言中，<code>Manpower</code> 和 <code>manpower</code> 是两个不同的标识符。</p>
+</li>
+</ul>
+<p>**关键字不能做标识符！！！ **</p>
+<h2 id="c语言中的空格">C语言中的空格</h2>
+<p>只包含空格的行，被称为空白行，可能带有注释，C 编译器会完全忽略它。</p>
+<p>在 C 中，空格用于描述空白符、制表符(Tabj键)、换行符和注释。空格分隔语句的各个部分，让编译器能识别语句中的某个元素（比如 int）在哪里结束，下一个元素在哪里开始。因此，在下面的语句中：</p>
+<pre><code class="language-c">int age;
+</code></pre>
+<p>在这里，int 和 age 之间必须至少有一个空格字符（通常是一个空白符），这样编译器才能够区分它们。另一方面，在下面的语句中：</p>
+<pre><code class="language-c">fruit = apples + oranges;   // 获取水果的总数
+</code></pre>
+<p>fruit 和 =，或者 = 和 apples 之间的空格字符不是必需的，但是为了增强可读性，是可以根据需要适当增加一些空格。</p>
+<h1 id="c-数据类型">C 数据类型</h1>
+<p>在 C 语言中，数据类型指的是用于声明不同类型的变量或函数的一个广泛的系统。变量的类型决定了变量存储占用的空间，以及如何解释存储的位模式。</p>
+<p>C 中的类型可分为以下几种：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">序号</th>
+<th style="text-align:left">类型与描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left"><strong>基本类型：</strong> 它们是算术类型，包括两种类型：整数类型和浮点类型。</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><strong>枚举类型：</strong> 它们也是算术类型，被用来定义在程序中只能赋予其一定的离散整数值的变量。</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left"><strong>void 类型：</strong> 类型说明符 <em>void</em> 表明没有可用的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left"><strong>派生类型：</strong> 它们包括：指针类型、数组类型、结构类型、共用体类型和函数类型。</td>
+</tr>
+</tbody>
+</table>
+<p>数组类型和结构类型统称为聚合类型。函数的类型指的是函数返回值的类型。</p>
+<h2 id="整数类型">整数类型</h2>
+<p>下表列出了关于标准整数类型的存储大小和值范围的细节：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">存储大小</th>
+<th style="text-align:left">值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">char</td>
+<td style="text-align:left">1 字节</td>
+<td style="text-align:left">-128 到 127 或 0 到 255</td>
+</tr>
+<tr>
+<td style="text-align:left">unsigned char</td>
+<td style="text-align:left">1 字节</td>
+<td style="text-align:left">0 到 255</td>
+</tr>
+<tr>
+<td style="text-align:left">signed char</td>
+<td style="text-align:left">1 字节</td>
+<td style="text-align:left">-128 到 127</td>
+</tr>
+<tr>
+<td style="text-align:left">int</td>
+<td style="text-align:left">2 或 4 字节</td>
+<td style="text-align:left">-32,768 到 32,767 或 -2,147,483,648 到 2,147,483,647</td>
+</tr>
+<tr>
+<td style="text-align:left">unsigned int</td>
+<td style="text-align:left">2 或 4 字节</td>
+<td style="text-align:left">0 到 65,535 或 0 到 4,294,967,295</td>
+</tr>
+<tr>
+<td style="text-align:left">short</td>
+<td style="text-align:left">2 字节</td>
+<td style="text-align:left">-32,768 到 32,767</td>
+</tr>
+<tr>
+<td style="text-align:left">unsigned short</td>
+<td style="text-align:left">2 字节</td>
+<td style="text-align:left">0 到 65,535</td>
+</tr>
+<tr>
+<td style="text-align:left">long</td>
+<td style="text-align:left">4 字节</td>
+<td style="text-align:left">-2,147,483,648 到 2,147,483,647</td>
+</tr>
+<tr>
+<td style="text-align:left">unsigned long</td>
+<td style="text-align:left">4 字节</td>
+<td style="text-align:left">0 到 4,294,967,295</td>
+</tr>
+</tbody>
+</table>
+<h2 id="浮点类型">浮点类型</h2>
+<p>下表列出了关于标准浮点类型的存储大小、值范围和精度的细节：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">存储大小</th>
+<th style="text-align:left">值范围</th>
+<th style="text-align:left">精度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">float</td>
+<td style="text-align:left">4 字节</td>
+<td style="text-align:left">1.2E-38 到 3.4E+38</td>
+<td style="text-align:left">6 位有效位</td>
+</tr>
+<tr>
+<td style="text-align:left">double</td>
+<td style="text-align:left">8 字节</td>
+<td style="text-align:left">2.3E-308 到 1.7E+308</td>
+<td style="text-align:left">15 位有效位</td>
+</tr>
+<tr>
+<td style="text-align:left">long double</td>
+<td style="text-align:left">16 字节</td>
+<td style="text-align:left">3.4E-4932 到 1.1E+4932</td>
+<td style="text-align:left">19 位有效位</td>
+</tr>
+</tbody>
+</table>
+<h2 id="void-类型">void 类型</h2>
+<p>void 类型指定没有可用的值。它通常用于以下三种情况下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">序号</th>
+<th style="text-align:left">类型与描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left"><strong>函数返回为空</strong> C 中有各种函数都不返回值，或者您可以说它们返回空。不返回值的函数的返回类型为空。例如 <strong>void exit (int status);</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left"><strong>函数参数为空</strong> C 中有各种函数不接受任何参数。不带参数的函数可以接受一个 void。例如 <strong>int rand(void);</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left"><strong>指针指向 void</strong> 类型为 void * 的指针代表对象的地址，而不是类型。例如，内存分配函数 <strong>void *malloc( size_t size );</strong> 返回指向 void 的指针，可以转换为任何数据类型。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="常用基本数据类型占用空间以64位机器为例">常用基本数据类型占用空间（以64位机器为例）</h2>
+<ul>
+<li>char ： 1个字节</li>
+<li>int ：4个字节</li>
+<li>float：4个字节</li>
+<li>double：8个字节</li>
+</ul>
+<h2 id="基本类型书写">基本类型书写</h2>
+<p>整数</p>
+<ul>
+<li>
+<p>a，默认为10进制 ，10 ，20。</p>
+</li>
+<li>
+<p>b，以0开头为8进制，045，021。</p>
+</li>
+<li>
+<p>c.，以0b开头为2进制，0b11101101。</p>
+</li>
+<li>
+<p>d，以0x开头为16进制，0x21458adf。</p>
+</li>
+</ul>
+<p><strong>小数</strong></p>
+<p>单精度常量(float)：2.3f 。</p>
+<p>双精度常量(double)：2.3，默认为双精度。</p>
+<p><strong>字符型常量</strong></p>
+<p>用英文<strong>单引号</strong>括起来，只保存一个字符'a'、'b' 、'*' ，还有转义字符 '\n' 、'\t'。</p>
+<p><strong>字符串常量</strong></p>
+<p>用英文的<strong>双引号</strong>引起来 可以保存多个字符：&quot;abc&quot;。</p>
+<h3 id="查看自己电脑上数据类型大小-可以使用sizeof运算符">查看自己电脑上数据类型大小  可以使用sizeof运算符</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main()
+{
+    printf(&quot;int 存储大小 : %lu \n&quot;, sizeof(int));
+    printf(&quot;float 存储大小 : %lu \n&quot;, sizeof(float));
+    printf(&quot;char 存储大小 : %lu \n&quot;, sizeof(char));
+    printf(&quot;double 存储大小 : %lu \n&quot;, sizeof(double));
+    return 0;
+}
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://s1.ax1x.com/2022/07/31/vkMQh9.png" alt="vkMQh9.png" loading="lazy"></figure>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li><a href="#c%E8%AF%AD%E8%A8%80">C语言</a>
+<ul>
+<li><a href="#c%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84%E4%B8%BB%E8%A6%81%E5%8C%85%E6%8B%AC">C程序结构主要包括：</a></li>
+<li><a href="#c%E8%AF%AD%E8%A8%80%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97">C语言常见关键字</a></li>
+</ul>
+</li>
+<li><a href="#c-%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6">C 基本框架</a>
+<ul>
+<li><a href="#%E5%88%86%E5%8F%B7">分号 ;</a></li>
+<li><a href="#%E6%B3%A8%E9%87%8A">注释</a></li>
+<li><a href="#%E6%A0%87%E8%AF%86%E7%AC%A6">标识符</a></li>
+<li><a href="#c%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E7%A9%BA%E6%A0%BC">C语言中的空格</a></li>
+</ul>
+</li>
+<li><a href="#c-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">C 数据类型</a>
+<ul>
+<li><a href="#%E6%95%B4%E6%95%B0%E7%B1%BB%E5%9E%8B">整数类型</a></li>
+<li><a href="#%E6%B5%AE%E7%82%B9%E7%B1%BB%E5%9E%8B">浮点类型</a></li>
+<li><a href="#void-%E7%B1%BB%E5%9E%8B">void 类型</a></li>
+<li><a href="#%E5%B8%B8%E7%94%A8%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8D%A0%E7%94%A8%E7%A9%BA%E9%97%B4%E4%BB%A564%E4%BD%8D%E6%9C%BA%E5%99%A8%E4%B8%BA%E4%BE%8B">常用基本数据类型占用空间（以64位机器为例）</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E4%B9%A6%E5%86%99">基本类型书写</a>
+<ul>
+<li><a href="#%E6%9F%A5%E7%9C%8B%E8%87%AA%E5%B7%B1%E7%94%B5%E8%84%91%E4%B8%8A%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%B0%8F-%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8sizeof%E8%BF%90%E7%AE%97%E7%AC%A6">查看自己电脑上数据类型大小  可以使用sizeof运算符</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://KA-ASLant.GitHub.io/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://KA-ASLant.GitHub.io/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+  
+</body>
+
+</html>

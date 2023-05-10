@@ -1,0 +1,1597 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Linux常用命令及详解 - Note</title>
+<link rel="shortcut icon" href="https://KA-ASLant.GitHub.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://KA-ASLant.GitHub.io/media/css/tailwind.css">
+<link rel="stylesheet" href="https://KA-ASLant.GitHub.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Linux常用命令及详解 - Note - Atom Feed" href="https://KA-ASLant.GitHub.io/atom.xml">
+
+<script async custom-element="amp-iframe"
+  src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  
+    
+
+  <meta name="description" content="ls命令 – 显示指定工作目录下的文件及属性信息
+ls是最常被使用到的Linux命令之一，来自于英文单词list的缩写，也正如list单词的英文意思，其功能是列举出指定目录下的文件名称及其属性。
+默认不加参数的情况下，ls命令会列出当前工作..." />
+  <meta property="og:title" content="Linux常用命令及详解 - Note">
+  <meta property="og:description" content="ls命令 – 显示指定工作目录下的文件及属性信息
+ls是最常被使用到的Linux命令之一，来自于英文单词list的缩写，也正如list单词的英文意思，其功能是列举出指定目录下的文件名称及其属性。
+默认不加参数的情况下，ls命令会列出当前工作..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://KA-ASLant.GitHub.io/GaMlMKaul/" />
+  <meta property="og:image" content="https://KA-ASLant.GitHub.io/images/avatar.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="Linux常用命令及详解 - Note">
+  <meta name="twitter:description" content="ls命令 – 显示指定工作目录下的文件及属性信息
+ls是最常被使用到的Linux命令之一，来自于英文单词list的缩写，也正如list单词的英文意思，其功能是列举出指定目录下的文件名称及其属性。
+默认不加参数的情况下，ls命令会列出当前工作...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://KA-ASLant.GitHub.io/GaMlMKaul/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://KA-ASLant.GitHub.io/media/css/prism-atom-dark.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://KA-ASLant.GitHub.io" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      Note
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          Linux常用命令及详解
+        </h1>
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2022年08月06日  Saturday · 33 min read</div>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h2 id="ls命令-显示指定工作目录下的文件及属性信息">ls命令 – 显示指定工作目录下的文件及属性信息</h2>
+<p>ls是最常被使用到的Linux命令之一，来自于英文单词list的缩写，也正如list单词的英文意思，其功能是列举出指定目录下的文件名称及其属性。</p>
+<p>默认不加参数的情况下，ls命令会列出当前工作目录中的文件信息，经常与cd和pwd命令搭配使用，十分方便。而带上参数后，我们则可以做更多的事情，作为最基础、最频繁使用的命令，有必要仔细了解下其常用功能。</p>
+<p><strong>语法格式:</strong> ls [参数] [文件]</p>
+<p><strong>常用参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th>-a</th>
+<th>显示所有文件及目录 (包括以“.”开头的隐藏文件)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-l</td>
+<td>使用长格式列出文件及目录的详细信息</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>将文件以相反次序显示(默认依英文字母次序)</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>根据最后的修改时间排序</td>
+</tr>
+<tr>
+<td>-A</td>
+<td>同 -a ，但不列出 “.” (当前目录) 及 “..” (父目录)</td>
+</tr>
+<tr>
+<td>-S</td>
+<td>根据文件大小排序</td>
+</tr>
+<tr>
+<td>-R</td>
+<td>递归列出所有子目录</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>查看目录的信息，而不是里面子文件的信息</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>输出文件的inode节点信息</td>
+</tr>
+<tr>
+<td>-m</td>
+<td>水平列出文件，以逗号间隔</td>
+</tr>
+<tr>
+<td>-X</td>
+<td>按文件扩展名排序</td>
+</tr>
+<tr>
+<td>--color</td>
+<td>输出信息中带有着色效果</td>
+</tr>
+</tbody>
+</table>
+<p><strong>参考实例</strong></p>
+<p>输出当前目录中的文件（默认不含隐藏文件）：</p>
+<pre><code class="language-bash">[root@Linux ~]# ls
+Desktop   Downloads  Music   Public   Videos
+</code></pre>
+<p>输出当前目录中的文件（含隐藏文件）：</p>
+<pre><code class="language-bash">[root@Linux ~]# ls -a
+.bashrc  Documents       Music      Videos
+ .cache   Downloads      Pictures   .viminfo
+test.cfg  .config  .esd_auth             .pki
+.bash_history    .cshrc   .ICEauthority         Public
+.bash_logout     .dbus    initial-setup-ks.cfg  .tcshrc
+.bash_profile    Desktop  .local                Templates
+</code></pre>
+<p>输出文件的长格式，包含属性详情信息：</p>
+<pre><code class="language-bash">[root@Linux ~]# ls -l
+total 8
+-rw-------. 1 root root 1430 Dec 14 08:05 test.cfg
+drwxr-xr-x. 2 root root    6 Dec 14 08:37 Desktop
+drwxr-xr-x. 2 root root    6 Dec 14 08:37 Documents
+drwxr-xr-x. 2 root root    6 Dec 14 08:37 Downloads
+-rw-r--r--. 1 root root 1585 Dec 14 08:34 initial-setup-ks.cfg
+drwxr-xr-x. 2 root root    6 Dec 14 08:37 Music
+drwxr-xr-x. 2 root root    6 Dec 14 08:37 Pictures
+drwxr-xr-x. 2 root root    6 Dec 14 08:37 Public
+drwxr-xr-x. 2 root root    6 Dec 14 08:37 Templates
+drwxr-xr-x. 2 root root    6 Dec 14 08:37 Videos
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://i0.hdslb.com/bfs/album/ba117e90067942dae77e6abc0656335376c549de.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://i0.hdslb.com/bfs/album/c8ccdd3cefdfb6bbc05171e621d489ee9bae40cb.png" alt="" loading="lazy"></figure>
+<p>输出指定目录中的文件列表：</p>
+<pre><code class="language-bash">[root@Linux ~]# ls /etc
+adjtime                     hosts                     pulse
+aliases                     hosts.allow               qemu-ga
+alsa                        hosts.deny                qemu-kvm
+alternatives                hp                        radvd.conf
+anacrontab                  idmapd.conf               ras
+asound.conf                 init.d                    rc0.d
+at.deny                     inittab                   rc1.d
+………………省略部分输出信息………………
+</code></pre>
+<p>输出文件名称及inode属性块号码：</p>
+<pre><code class="language-bash">[root@Linux ~]# ls -i
+35290115 test.cfg  35290137 initial-setup-ks.cfg  35290164 Templates
+ 1137391 Desktop          17840039 Music                 51609597 Videos
+ 1137392 Documents        35290165 Pictures
+17840038 Downloads        51609596 Public
+</code></pre>
+<p>搭配通配符一起使用，输出指定目录中所有以sd开头的文件名称：</p>
+<pre><code class="language-bash">[root@Linux ~]# ls /dev/sd*
+/dev/sda  /dev/sda1  /dev/sda2
+</code></pre>
+<p>依据文件大小进行排序，输出指定目录中文件属性详情信息：</p>
+<pre><code class="language-bash">[root@Linux ~]# ls -Sl /etc
+total 1348
+-rw-r--r--.  1 root root    692241 Sep 10  2018 services
+-rw-r--r--.  1 root root     66482 Dec 14 08:34 ld.so.cache
+-rw-r--r--.  1 root root     60352 May 11  2017 mime.types
+-rw-r--r--.  1 root dnsmasq  26843 Aug 12  2018 dnsmasq.conf
+-rw-r--r--.  1 root root     25696 Dec 12  2018 brltty.conf
+-rw-r--r--.  1 root root      9450 Aug 12  2018 nanorc
+-rw-r--r--.  1 root root      7265 Dec 14 08:03 kdump.conf
+-rw-------.  1 tss  tss       7046 Aug 13  2018 tcsd.conf
+………………省略部分输出信息………………
+</code></pre>
+<h2 id="cp命令-复制文件或目录">cp命令 – 复制文件或目录</h2>
+<p>cp命令来自于英文单词copy的缩写，用于将一个或多个文件或目录复制到指定位置，也常用于文件的备份工作。-r参数用于递归操作，复制目录时若忘记加则会直接报错，而-f参数则用于当目标文件已存在时会直接覆盖不再询问，这两个参数尤为常用。</p>
+<p>**语法格式：**cp  [参数]  源文件  目标文件</p>
+<p><strong>常用参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">-f</th>
+<th style="text-align:left">若目标文件已存在，则会直接覆盖原文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-i</td>
+<td style="text-align:left">若目标文件已存在，则会询问是否覆盖</td>
+</tr>
+<tr>
+<td style="text-align:left">-p</td>
+<td style="text-align:left">保留源文件或目录的所有属性</td>
+</tr>
+<tr>
+<td style="text-align:left">-r</td>
+<td style="text-align:left">递归复制文件和目录</td>
+</tr>
+<tr>
+<td style="text-align:left">-d</td>
+<td style="text-align:left">当复制符号连接时，把目标文件或目录也建立为符号连接，并指向与源文件或目录连接的原始文件或目录</td>
+</tr>
+<tr>
+<td style="text-align:left">-l</td>
+<td style="text-align:left">对源文件建立硬连接，而非复制文件</td>
+</tr>
+<tr>
+<td style="text-align:left">-s</td>
+<td style="text-align:left">对源文件建立符号连接，而非复制文件</td>
+</tr>
+<tr>
+<td style="text-align:left">-b</td>
+<td style="text-align:left">覆盖已存在的文件目标前将目标文件备份</td>
+</tr>
+<tr>
+<td style="text-align:left">-v</td>
+<td style="text-align:left">详细显示cp命令执行的操作过程</td>
+</tr>
+<tr>
+<td style="text-align:left">-a</td>
+<td style="text-align:left">等价于“pdr”选项</td>
+</tr>
+</tbody>
+</table>
+<p><strong>参考实例</strong></p>
+<p>在当前工作目录中，将某个文件复制一份，并定义新文件名称：</p>
+<pre><code class="language-bash">[root@Linux ~]# cp test.cfg kickstart.cfg
+</code></pre>
+<p>在当前工作目录中，将某个目录复制一份，并定义新目录名称：</p>
+<pre><code class="language-bash">[root@Linux ~]# cp -r Documents Doc
+</code></pre>
+<p>复制某个文件时，保留其原始权限及用户归属信息：</p>
+<pre><code class="language-bash">[root@Linux ~]# cp -a kickstart.cfg ks.cfg
+</code></pre>
+<p>将某个文件复制到/etc目录中，<strong>并覆盖已有文件</strong>，<strong>不进行询问</strong>：</p>
+<pre><code class="language-bash">[root@Linux ~]# cp -f ks.cfg /etc
+</code></pre>
+<p>将<strong>多个文件一同复制</strong>到/etc目录中，如已有目标文件名称则<strong>默认询问</strong>是否覆盖：</p>
+<pre><code class="language-bash">[root@Linux ~]# cp test.cfg ks.cfg /etc
+cp: overwrite '/etc/ks.cfg'? y
+</code></pre>
+<h2 id="mkdir命令-创建目录文件">mkdir命令 – 创建目录文件</h2>
+<p>mkdir命令来自于英文词组“make directories”的缩写，其功能是用来创建目录文件。使用简单，但需要注意若要创建的目标目录已经存在，则会提示已存在而不继续创建，不覆盖已有文件。而目录不存在，但具有嵌套的依赖关系，例如a/b/c/d/e/f，要想一次性创建则需要加入-p参数，进行递归操作。</p>
+<p><strong>语法格式 :</strong> mkdir  [参数]  目录</p>
+<p><strong>常用参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">-p</th>
+<th style="text-align:left">递归创建多级目录</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-m</td>
+<td style="text-align:left">建立目录的同时设置目录的权限</td>
+</tr>
+<tr>
+<td style="text-align:left">-z</td>
+<td style="text-align:left">设置安全上下文</td>
+</tr>
+<tr>
+<td style="text-align:left">-v</td>
+<td style="text-align:left">显示目录的创建过程</td>
+</tr>
+</tbody>
+</table>
+<p><strong>参考实例</strong></p>
+<p>在当前工作目录中，建立一个目录文件：</p>
+<pre><code class="language-bash">[root@Linux ~]# mkdir dir1
+</code></pre>
+<p>在当前工作目录中，创建一个目录文件并设置700权限，不让除所有主以外任何人读、写、执行它：</p>
+<pre><code class="language-bash">[root@Linux ~]# mkdir -m 700 dir2
+</code></pre>
+<p>在当前工作目录中，一次性创建多个目录文件：</p>
+<pre><code class="language-bash">[root@Linux ~]# mkdir dir3 dir4 dir5
+</code></pre>
+<p>在系统根目录中，一次性创建多个有嵌套关系的目录文件：</p>
+<pre><code class="language-bash">[root@Linux ~]# mkdir -p /dir1/dir2/dir3/dir4/dir5
+</code></pre>
+<h2 id="mv命令-移动或改名文件">mv命令 – 移动或改名文件</h2>
+<p>mv命令来自于英文单词move的缩写，其功能与英文含义相同，用于对文件进行剪切和重命名。</p>
+<p>这是一个高频使用的文件管理命令，我们需要留意它与复制命令的区别。cp命令是用于文件的复制操作，文件个数是增加的，而mv则为剪切操作，也就是对文件进行移动（搬家）操作，文件位置发生变化，但总个数并无增加。</p>
+<p>在同一个目录内对文件进行剪切的操作，实际应理解成重命名操作，例如下面的实例一所示。</p>
+<p>**语法格式：**mv [参数] 源文件 目标文件</p>
+<p><strong>常用参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">-i</th>
+<th style="text-align:left">若存在同名文件，则向用户询问是否覆盖</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-f</td>
+<td style="text-align:left">覆盖已有文件时，不进行任何提示</td>
+</tr>
+<tr>
+<td style="text-align:left">-b</td>
+<td style="text-align:left">当文件存在时，覆盖前为其创建一个备份</td>
+</tr>
+<tr>
+<td style="text-align:left">-u</td>
+<td style="text-align:left">当源文件比目标文件新，或者目标文件不存在时，才执行移动此操作</td>
+</tr>
+</tbody>
+</table>
+<p><strong>参考实例</strong></p>
+<p>在当前工作目录中，对某个文件进行剪切后粘贴（重命名）操作：</p>
+<pre><code class="language-bash">[root@Linux ~]# mv test.cfg ks.cfg
+</code></pre>
+<p>将某个文件移动到/etc目录中，保留文件原始名称：</p>
+<pre><code class="language-bash">[root@Linux ~]# mv ks.cfg /etc
+</code></pre>
+<p>将某个目录移动到/etc目录中，并定义新的目录名称：</p>
+<pre><code class="language-bash">[root@Linux ~]# mv Documents /etc/docs
+</code></pre>
+<p>将/home目录中所有的文件都移动到当前工作目录中，遇到已存在文件则直接覆盖：</p>
+<pre><code class="language-bash">[root@Linux ~]# mv -f /home/* .
+</code></pre>
+<h2 id="touch命令-创建空文件与修改时间戳">touch命令 – 创建空文件与修改时间戳</h2>
+<p>touch命令的功能是用于创建空文件与修改时间戳。如果文件不存在，则会创建出一个空内容的文本文件；如果文件已经存在，则会对文件的Atime（访问时间）和Ctime（修改时间）进行修改操作，管理员可以完成此项工作，而普通用户只能管理主机的文件。</p>
+<p>**语法格式：**touch [参数] 文件</p>
+<p><strong>常用参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th>-a</th>
+<th>改变档案的读取时间记录</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-m</td>
+<td>改变档案的修改时间记录</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>使用参考档的时间记录，与 --file 的效果一样</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>不创建新文件</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>设定时间与日期，可以使用各种不同的格式</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>设定档案的时间记录，格式与 date 命令相同</td>
+</tr>
+<tr>
+<td>--no-create</td>
+<td>不创建新文件</td>
+</tr>
+<tr>
+<td>--help</td>
+<td>显示帮助信息</td>
+</tr>
+<tr>
+<td>--version</td>
+<td>列出版本讯息</td>
+</tr>
+</tbody>
+</table>
+<p><strong>参考实例</strong></p>
+<p><strong>创建出一个指定名称的空文件</strong>：</p>
+<pre><code class="language-bash">[root@Linux ~]# touch File.txt
+</code></pre>
+<p>结合<strong>通配符</strong>，创建出多个指定名称的空文件：</p>
+<pre><code class="language-bash">[root@Linux ~]# touch File{1..5}.txt
+</code></pre>
+<p>修改指定文件的查看时间和修改时间：</p>
+<pre><code>[root@Linux ~]# touch -d &quot;2022-05-08 15:44&quot; anaconda-ks.cfg 
+[root@Linux ~]# stat anaconda-ks.cfg 
+  File: anaconda-ks.cfg
+  Size: 1256      	Blocks: 8          IO Block: 4096   regular file
+Device: fd00h/64768d	Inode: 35319937    Links: 1
+Access: (0600/-rw-------)  Uid: (    0/    root)   Gid: (    0/    root)
+Context: system_u:object_r:admin_home_t:s0
+Access: 2022-05-08 15:44:00.000000000 +0800
+Modify: 2022-05-08 15:44:00.000000000 +0800
+Change: 2022-05-06 15:43:47.843170709 +0800
+ Birth: -
+</code></pre>
+<h2 id="rm命令-删除文件或目录">rm命令 – 删除文件或目录</h2>
+<p>rm命令来自于英文单词remove的缩写，其功能是用于删除文件或目录，一次可以删除多个文件，或递归删除目录及其内的所有子文件。</p>
+<p>rm也是一个很危险的命令，使用的时候要特别当心，尤其对于新手更要格外注意，如执行rm -rf /*命令则会清空系统中所有的文件，甚至无法恢复回来。所以我们在执行之前一定要再次确认下在哪个目录中，到底要删除什么文件，考虑好后再敲击回车，时刻保持清醒的头脑。</p>
+<p>**语法格式：**rm [参数] 文件</p>
+<p><strong>常用参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">-f</th>
+<th style="text-align:left">强制删除（不二次询问）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-i</td>
+<td style="text-align:left">删除前会询问用户是否操作</td>
+</tr>
+<tr>
+<td style="text-align:left">-r/R</td>
+<td style="text-align:left">递归删除</td>
+</tr>
+<tr>
+<td style="text-align:left">-v</td>
+<td style="text-align:left">显示指令的详细执行过程</td>
+</tr>
+</tbody>
+</table>
+<p><strong>参考实例</strong></p>
+<p>删除某个文件，默认会进行二次确认，敲击y进行确认。</p>
+<pre><code class="language-bash">[root@Linux ~]# rm test.cfg 
+rm: remove regular file 'test.cfg'? y
+</code></pre>
+<p>删除某个文件，强制操作不需要二次确认：</p>
+<pre><code class="language-bash">[root@Linux ~]# rm -f initial-setup-ks.cfg 
+</code></pre>
+<p>删除某个目录及其内的子文件或子目录，一并都强制删除：</p>
+<pre><code class="language-bash">[root@Linux ~]# rm -rf Documents
+</code></pre>
+<p>强制删除当前工作目录内的所有以.txt为后缀的文件</p>
+<pre><code class="language-bash">[root@Linux ~]# rm -f *.txt
+</code></pre>
+<p>【删库跑路必备技能】强制清空服务器系统根目录内的所有文件：</p>
+<pre><code class="language-bash">[root@Linux ~]# rm -rf /*
+</code></pre>
+<h2 id="rmdir命令-删除空目录文件">rmdir命令 – 删除空目录文件</h2>
+<p>rmdir命令来自于英文词组“remove directory”的缩写，其功能是用于删除空目录文件。rmdir命令仅能够删除空内容的目录文件，如需删除非空目录时，则需要使用带有-R参数的rm命令进行操作。而rmdir命令的-p递归删除操作亦不意味着能删除目录中已有的文件，而是要求每个子目录都必须是空的。</p>
+<p><strong>语法格式 :</strong> rmdir [参数] 目录</p>
+<p><strong>常用参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th>-p</th>
+<th>用递归的方式删除指定的目录路径中的所有父级目录，非空则报错</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-v</td>
+<td>显示命令的详细执行过程</td>
+</tr>
+<tr>
+<td>-- -- help</td>
+<td>显示命令的帮助信息</td>
+</tr>
+<tr>
+<td>-- -- version</td>
+<td>显示命令的版本信息</td>
+</tr>
+</tbody>
+</table>
+<p><strong>参考实例</strong></p>
+<p>删除指定的空目录：</p>
+<pre><code class="language-bash">[root@Linux ~]# rmdir Documents
+</code></pre>
+<p>删除指定的空目录，及其内的子空目录：</p>
+<pre><code class="language-bash">[root@Linux ~]# rmdir -p Documents
+</code></pre>
+<p>删除指定的空目录，并显示删除的过程：</p>
+<pre><code class="language-bash">[root@Linux ~]# rmdir -v Documents
+rmdir: removing directory, 'Documents'
+</code></pre>
+<h2 id="apt-get命令-管理服务软件基于debian分支">apt-get命令 – 管理服务软件(基于Debian分支)</h2>
+<p>apt-get命令来自于英文词组“Advanced Package Tool get”的缩写，其功能是用于管理服务软件。apt-get命令主要应用于<strong>Debian、ubuntu等系统</strong>，能够像<code>yum/dnf</code>软件仓库一样<strong>自动下载、配置、安装、卸载服务软件</strong>，用户只要准确提出需求就好~</p>
+<p>**语法格式：**apt-get [参数] 软件名</p>
+<p><strong>常用参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th>update</th>
+<th>重新获取软件包列表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>upgrade</td>
+<td>更新软件</td>
+</tr>
+<tr>
+<td>install</td>
+<td>安装软件</td>
+</tr>
+<tr>
+<td>remove</td>
+<td>卸载软件</td>
+</tr>
+<tr>
+<td>autoremove</td>
+<td>自动卸载不使用的软件</td>
+</tr>
+<tr>
+<td>source</td>
+<td>下载源代码</td>
+</tr>
+<tr>
+<td>build-dep</td>
+<td>编译依赖关系</td>
+</tr>
+<tr>
+<td>dist-upgrade</td>
+<td>更新系统</td>
+</tr>
+<tr>
+<td>purge</td>
+<td>删除配置文件</td>
+</tr>
+<tr>
+<td>clean</td>
+<td>清理垃圾文件</td>
+</tr>
+<tr>
+<td>check</td>
+<td>检查是否损坏</td>
+</tr>
+</tbody>
+</table>
+<p><strong>参考实例</strong></p>
+<p>安装指定的服务软件：</p>
+<pre><code class="language-bash">[root@Linux ~]# apt-get install vim    #vim是一款Linux文本编辑软件
+</code></pre>
+<p>更新软件列表：</p>
+<pre><code class="language-bash">[root@Linux ~]# apt-get update
+</code></pre>
+<p>卸载指定的服务软件：</p>
+<pre><code class="language-bash">[root@Linux ~]# apt-get remove vim
+</code></pre>
+<p>卸载指定的服务软件及配置信息：</p>
+<pre><code class="language-bash">[root@Linux ~]# apt-get -purge remove vim
+</code></pre>
+<h2 id="yum命令-rpm的软件包管理器基于red-hat分支">yum命令 – RPM的软件包管理器(基于Red-Hat分支)</h2>
+<p><strong>Red-Hat</strong> Package Manager（红帽软件包管理器）简称RPM</p>
+<p>yum命令来自于英文词组”YellowdogUpdater,Modified“的缩写，其功能是用于在Linux系统中基于RPM技术进行软件包的管理工作。yum技术通用于<strong>RHEL、CentOS、Fedora、OpenSUSE等主流系统</strong>，可以让系统管理人员交互式的自动化更新和管理软件包，实现从指定服务器自动下载、更新、删除软件包的工作。</p>
+<p>yum软件仓库及命令能够自动处理软件依赖关系，一次性安装所需全部软件，无需繁琐的操作。</p>
+<p>**语法格式：**yum [参数] 软件包</p>
+<p><strong>常用参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th>-h</th>
+<th>显示帮助信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-y</td>
+<td>对所有的提问都回答“yes”</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>指定配置文件</td>
+</tr>
+<tr>
+<td>-q</td>
+<td>安静模式</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>详细模式</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>检查外部错误</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>设置调试等级（0-10）</td>
+</tr>
+<tr>
+<td>-e</td>
+<td>设置错误等级（0-10）</td>
+</tr>
+<tr>
+<td>-R</td>
+<td>设置yum处理一个命令的最大等待时间</td>
+</tr>
+<tr>
+<td>-C</td>
+<td>完全从缓存中运行，而不去下载或者更新任何头文件</td>
+</tr>
+<tr>
+<td>install</td>
+<td>安装rpm软件包</td>
+</tr>
+<tr>
+<td>update</td>
+<td>更新rpm软件包</td>
+</tr>
+<tr>
+<td>check-update</td>
+<td>检查是否有可用的更新rpm软件包</td>
+</tr>
+<tr>
+<td>remove</td>
+<td>删除指定的rpm软件包</td>
+</tr>
+<tr>
+<td>list</td>
+<td>显示软件包的信息</td>
+</tr>
+<tr>
+<td>search</td>
+<td>检查软件包的信息</td>
+</tr>
+<tr>
+<td>info</td>
+<td>显示指定的rpm软件包的描述信息和概要信息</td>
+</tr>
+<tr>
+<td>clean</td>
+<td>清理yum过期的缓存</td>
+</tr>
+<tr>
+<td>shell</td>
+<td>进入yum的shell提示符</td>
+</tr>
+<tr>
+<td>resolvedep</td>
+<td>显示rpm软件包的依赖关系</td>
+</tr>
+<tr>
+<td>localinstall</td>
+<td>安装本地的rpm软件包</td>
+</tr>
+<tr>
+<td>localupdate</td>
+<td>显示本地rpm软件包进行更新</td>
+</tr>
+<tr>
+<td>deplist</td>
+<td>显示rpm软件包的所有依赖关系</td>
+</tr>
+</tbody>
+</table>
+<p><strong>参考实例</strong></p>
+<p>清理原有的软件仓库信息缓存：</p>
+<pre><code>[root@Linux ~]# yum clean all
+Updating Subscription Management repositories.
+Unable to read consumer identity
+This system is not registered to Red Hat Subscription Management. You can use subscription-manager to register.
+12 files removed
+</code></pre>
+<p>建立最新的软件仓库信息缓存：</p>
+<pre><code>[root@Linux ~]# yum makecache
+Updating Subscription Management repositories.
+Unable to read consumer identity
+This system is not registered to Red Hat Subscription Management. You can use subscription-manager to register.
+AppStream                                        83 MB/s | 5.3 MB     00:00    
+BaseOS                                           28 MB/s | 2.2 MB     00:00    
+Last metadata expiration check: 0:00:01 ago on Mon 09 May 2022 11:43:41 PM CST.
+Metadata cache created.
+</code></pre>
+<p>安装指定的服务及相关软件包：</p>
+<pre><code>[root@Linux ~]# yum install httpd
+………………省略输出信息………………
+</code></pre>
+<p>更新指定的服务及相关软件包：</p>
+<pre><code>[root@Linux ~]# yum update httpd
+………………省略输出信息………………
+</code></pre>
+<p>卸载指定的服务及相关软件包：</p>
+<pre><code>[root@Linux ~]# yum remove httpd
+………………省略输出信息………………
+</code></pre>
+<p>显示可安装的软件包组列表：</p>
+<pre><code>[root@Linux ~]# yum grouplist 
+Updating Subscription Management repositories.
+Unable to read consumer identity
+
+Last metadata expiration check: 0:03:02 ago on Mon 09 May 2022 11:43:41 PM CST.
+Available Environment Groups:
+   Server
+   Minimal Install
+   Workstation
+   Virtualization Host
+   Custom Operating System
+Installed Environment Groups:
+   Server with GUI
+Installed Groups:
+   Container Management
+   Headless Management
+Available Groups:
+   .NET Core Development
+………………省略部分输出信息………………
+</code></pre>
+<p>显示指定服务的软件信息：</p>
+<pre><code>[root@Linux ~]# yum info httpd
+Updating Subscription Management repositories.
+Unable to read consumer identity
+Last metadata expiration check: 0:07:21 ago on Mon 09 May 2022 11:43:41 PM CST.
+Installed Packages
+Name         : httpd
+Version      : 2.4.37
+Release      : 10.module+el8+2764+7127e69e
+Arch         : x86_64
+Size         : 4.3 M
+Source       : httpd-2.4.37-10.module+el8+2764+7127e69e.src.rpm
+Repo         : @System
+From repo    : AppStream
+Summary      : Apache HTTP Server
+URL          : https://httpd.apache.org/
+License      : ASL 2.0
+Description  : The Apache HTTP Server is a powerful, efficient, and extensible
+             : web server.
+</code></pre>
+<h2 id="dnf命令-新一代的rpm软件包管理器">dnf命令 – 新一代的RPM软件包管理器</h2>
+<p>dnf是新一代的rpm软件包管理器。首次出现在 Fedora 18 这个发行版中。而最近，它取代了yum，正式成为 Fedora 22 的包管理器。</p>
+<p>dnf包管理器克服了yum包管理器的一些瓶颈，提升了包括用户体验，内存占用，依赖分析，运行速度等多方面的内容。dnf使用 RPM, libsolv 和 hawkey 库进行包管理操作。尽管它没有预装在 CentOS 和 RHEL 7 中，但你可以在使用yum的同时使用dnf 。</p>
+<p><strong>语法格式:</strong> dnf  [参数]</p>
+<p><strong>常用参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th>repolist</th>
+<th>显示系统中可用的 DNF 软件库</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>list</td>
+<td>列出用户系统上的所有来自软件库的可用软件包和所有已经安装在系统上的软件包</td>
+</tr>
+<tr>
+<td>search &lt;包名&gt;</td>
+<td>搜索软件库中的软件包</td>
+</tr>
+<tr>
+<td>provides &lt;路径&gt;</td>
+<td>查找某一文件的提供者</td>
+</tr>
+<tr>
+<td>info &lt;包名&gt;</td>
+<td>查看软件包详情</td>
+</tr>
+<tr>
+<td>install &lt;包名&gt;</td>
+<td>安装软件包</td>
+</tr>
+<tr>
+<td>update &lt;包名&gt;</td>
+<td>升级软件包</td>
+</tr>
+<tr>
+<td>check-update</td>
+<td>检查系统软件包的更新</td>
+</tr>
+<tr>
+<td>update</td>
+<td>升级所有系统软件包</td>
+</tr>
+<tr>
+<td>remove</td>
+<td>删除软件包</td>
+</tr>
+<tr>
+<td>autoremove</td>
+<td>删除无用孤立的软件包</td>
+</tr>
+<tr>
+<td>clean all</td>
+<td>删除缓存的无用软件包</td>
+</tr>
+<tr>
+<td>help &lt;命令名&gt;</td>
+<td>获取有关某条命令的使用帮助</td>
+</tr>
+<tr>
+<td>help</td>
+<td>查看所有的dnf命令及其用途</td>
+</tr>
+<tr>
+<td>history</td>
+<td>查看dnf命令的执行历史</td>
+</tr>
+<tr>
+<td>grouplist</td>
+<td>查看所有的软件包组</td>
+</tr>
+<tr>
+<td>groupinstall &lt;软件包组名称&gt;</td>
+<td>安装一个软件包组</td>
+</tr>
+<tr>
+<td>groupupdate &lt;软件包组名称&gt;</td>
+<td>升级一个软件包组中的软件包</td>
+</tr>
+<tr>
+<td>groupremove &lt;软件包组名称&gt;</td>
+<td>删除一个软件包组</td>
+</tr>
+<tr>
+<td>distro-sync</td>
+<td>更新软件包到最新的稳定发行版</td>
+</tr>
+<tr>
+<td>reinstall &lt;包名&gt;</td>
+<td>重新安装特定软件包</td>
+</tr>
+<tr>
+<td>downgrade &lt;包名&gt;</td>
+<td>回滚某个特定软件的版本</td>
+</tr>
+<tr>
+<td>–version</td>
+<td>查看 DNF 包管理器版本</td>
+</tr>
+</tbody>
+</table>
+<p><strong>参考实例</strong></p>
+<p>回滚acpid软件包到特定版本：</p>
+<pre><code>[root@Linux ~]# dnf downgrade acpid
+</code></pre>
+<p>重新安装特定软件包：</p>
+<pre><code>[root@Linux ~]# dnf reinstall nano
+</code></pre>
+<p>查看所有的软件包组：</p>
+<pre><code>[root@Linux ~]# dnf grouplist
+</code></pre>
+<h2 id="pwd命令-显示当前工作目录的路径">pwd命令 – 显示当前工作目录的路径</h2>
+<p>pwd命令来自于英文词组”print working directory“的缩写，其功能是用于显示当前工作目录的路径，即显示所在位置的绝对路径。</p>
+<p>在实际工作中，我们经常会在不同目录之间进行切换，为了防止”迷路“，可以使用pwd命令快速查看当前所处的工作目录路径，方便开展后续工作。</p>
+<p><strong>语法格式</strong>：pwd [参数]</p>
+<p><strong>常用参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th>-L</th>
+<th>显示逻辑路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>参考实例</strong></p>
+<p>查看当前工作目录路径：</p>
+<pre><code class="language-bash">[root@Linux ~]# pwd
+/root
+</code></pre>
+<h2 id="dpkg命令-管理软件安装包">dpkg命令 – 管理软件安装包</h2>
+<p>dpkg命令来自于英文词组“Debian package”的缩写，其功能是用于管理软件安装包，在Debian系统中最常用的软件安装、管理、卸载的实用工具。</p>
+<p>**语法格式：**dpkg  [参数]  软件包</p>
+<p><strong>常用参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th>-i</th>
+<th>安装软件包</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-r</td>
+<td>删除软件包</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>显示已安装软件包列表</td>
+</tr>
+<tr>
+<td>-L</td>
+<td>显示于软件包关联的文件</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>显示软件包内文件列表</td>
+</tr>
+</tbody>
+</table>
+<p><strong>参考实例</strong></p>
+<p>安装指定的软件包：</p>
+<pre><code class="language-bash">[root@Linux ~]# dpkg -i package.deb 
+</code></pre>
+<p>卸载指定的软件包：</p>
+<pre><code class="language-bash">[root@Linux ~]# dpkg -r package.deb  
+</code></pre>
+<p>列出当前已安装的软件列表：</p>
+<pre><code class="language-bash">[root@Linux ~]# dpkg -l 
+</code></pre>
+<p>显示指定软件包内的文件信息：</p>
+<pre><code class="language-bash">[root@Linux ~]# dpkg -c package.deb 
+</code></pre>
+<h2 id="mmove命令-移动文件或目录">mmove命令 – 移动文件或目录</h2>
+<p>mmove命令用于在MS-DOS文件系统中，移动文件或目录，或更改名称。mmove为<strong>mtools</strong>工具命令，模拟MS-DOS的move命令，可在MS-DOS文件系统中移动现有的文件或目录，或是更改现有文件或目录的名称。</p>
+<p><strong>语法格式：</strong> mmove [源文件或目录] [目标文件或目录]</p>
+<p><strong>常用参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th>源文件或目录</th>
+<th>执行操作的源文件或目录路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>目标文件或目录</td>
+<td>执行操作后的目标文件或目录路径</td>
+</tr>
+</tbody>
+</table>
+<p><strong>参考实例</strong></p>
+<p>使用指令mmove将文件a.txt移动到目录dir中：</p>
+<pre><code class="language-bash">[root@Linux ~]# mmove a.txt dir
+</code></pre>
+<p>使用指令mmove将文件”autorun.bat”移动到目录”test”中 ：</p>
+<pre><code class="language-bash">[root@Linux ~]# mmove autorun.bat test 
+</code></pre>
+<p>以上命令执行以后，指令mmove会将文件”autorun.bat”移动到指定目录”test”中。</p>
+<p>使用指令mmove将文件test移动到目录”autorun.bat”中 ：</p>
+<pre><code class="language-bash">[root@Linux ~]# mmove test autorun.bat 
+</code></pre>
+<p>注意：用户可以使用mdir指令查看移动后的文件或目录信息。</p>
+<p>使用该命令前先查看原来的目录，得到如下结果：</p>
+<pre><code class="language-bash">[root@Linux ~]# mdir -/ a:\* 
+Volume in drive A has no label #加载信息  
+Volume Serial Number is 13D2~055C  
+Directory for A:/ #以下为目录信息  
+#文件名目录大小 修改时间  
+./TEST &lt;DIR&gt; 2009-09-23 16:59  
+AUTORUN.INF 265 2009-09-23 16:53  
+AUTORUN.BAT 43 2009-09-23 16:56  
+3 files 308 bytes #统计总大小  
+724 325 bytes free #剩余空间
+</code></pre>
+<p>使用mmove命令，并再次查看，结果如下：</p>
+<pre><code class="language-bash">[root@Linux ~]# mmove autorun.bat test
+[root@Linux ~]# mdir -/ a:\*
+Volume in drive A has no label #加载信息  
+Volume Serial Number is 13D2~055C  
+Directory for A:/ #以下为目录信息  
+#文件名目录大小 修改时间  
+./TEST &lt;DIR&gt; 2009-09-23 16:59  
+AUTORUN.INF 265 2009-09-23 16:53  
+2 files 265 bytes #统计总大小  
+724 683 bytes free #剩余空间  
+cmd@cmd-desktop:~$ mdir -/ a:\test\* #再次查看test目录中文件  
+AUTORUN.BAT 43 2009-09-23 16:56  
+1 files 43 bytes #统计总大小  
+</code></pre>
+<h2 id="file命令-识别文件类型">file命令 – 识别文件类型</h2>
+<p>file命令的功能是用于识别文件的类型，也可以用来辨别一些内容的编码格式。由于Linux系统并不是像Windows系统那样通过扩展名来定义文件类型，因此用户无法直接通过文件名来进行分辨。file命令则是为了解决此问题，通过分析文件头部信息中的标识来显示文件类型，使用很方便。</p>
+<p>**语法格式：**file [参数] 文件</p>
+<p><strong>常用参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th>-b</th>
+<th>列出辨识结果时，不显示文件名称 (简要模式)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-c</td>
+<td>详细显示指令执行过程</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>指定名称文件，显示多个文件类型信息</td>
+</tr>
+<tr>
+<td>-L</td>
+<td>直接显示符号连接所指向的文件类别</td>
+</tr>
+<tr>
+<td>-m</td>
+<td>指定魔法数字文件</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示版本信息</td>
+</tr>
+<tr>
+<td>-z</td>
+<td>尝试去解读压缩文件的内容</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>显示MIME类别</td>
+</tr>
+</tbody>
+</table>
+<p><strong>参考实例:</strong></p>
+<p>查看某些文件的类型：</p>
+<pre><code class="language-bash">[root@Linux ~]# file a.cfg
+a.cfg: ASCII text, with no line terminators
+[root@Linux ~]# file /dev/sda
+/dev/sda: block special (8/0)
+[root@Linux ~]# file Documents
+Documents: directory
+[root@Linux ~]# file /bin/ls
+/bin/ls: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=937708964f0f7e3673465d7749d6cf6a2601dea2, stripped, too many notes (256)
+</code></pre>
+<p>查看某个文件的类型，但不显示文件名：</p>
+<pre><code class="language-bash">[root@Linux ~]# file -b test.cfg 
+ASCII text
+</code></pre>
+<p>以MIME类别来显示某个文件的类型：</p>
+<pre><code class="language-bash">[root@Linux ~]# file -i test.cfg 
+test.cfg: text/plain; charset=us-ascii
+</code></pre>
+<p>查看某个符号链接文件（快捷方式）的类型，会提示目标文件名称：</p>
+<pre><code class="language-bash">[root@Linux ~]# file /dev/cdrom
+/dev/cdrom: symbolic link to sr0
+</code></pre>
+<p>直接查看某个符号链接文件（快捷方式）所对应的目标文件的文件类型：</p>
+<pre><code class="language-bash">[root@Linux ~]# file -L /dev/cdrom
+/dev/cdrom: block special (11/0)
+</code></pre>
+<h2 id="tar命令-压缩和解压缩文件">tar命令 – 压缩和解压缩文件</h2>
+<p>tar命令的功能是用于压缩和解压缩文件，能够制作出Linux系统中常见的.tar、.tar.gz、.tar.bz2等格式的压缩包文件。对于RHEL7、CentOS7版本以后的系统，解压时可以不加压缩格式参数（如z或j），系统能自动进行分析并解压。</p>
+<p>把要传输的文件先进行压缩再进行传输，能够很好的提高工作效率，方便分享。</p>
+<p>**语法格式：**tar [参数]  [压缩后名称]  [文件或目录]</p>
+<p><strong>常用参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th>-A</th>
+<th>新增文件到以存在的备份文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-B</td>
+<td>设置区块大小</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>建立新的备份文件(<strong>压缩</strong>)</td>
+</tr>
+<tr>
+<td>-C &lt;目录&gt;</td>
+<td>仅压缩指定目录里的内容或解压缩到指定目录</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>记录文件的差别</td>
+</tr>
+<tr>
+<td>-x</td>
+<td>从归档文件中提取文件(<strong>解压</strong>)</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>列出备份文件的内容</td>
+</tr>
+<tr>
+<td>-z</td>
+<td>通过gzip指令压缩/解压缩文件，文件名最好为*.tar.gz</td>
+</tr>
+<tr>
+<td>-Z</td>
+<td>通过compress指令处理备份文件</td>
+</tr>
+<tr>
+<td>-f&lt;备份文件&gt;</td>
+<td>指定备份文件</td>
+</tr>
+<tr>
+<td>-v</td>
+<td><strong>显示指令执行过程</strong></td>
+</tr>
+<tr>
+<td>-r</td>
+<td>添加文件到已经压缩的文件</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>添加改变了和现有的文件到已经存在的压缩文件</td>
+</tr>
+<tr>
+<td>-j</td>
+<td>通过bzip2指令压缩/解压缩文件，文件名最好为*.tar.bz2</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示操作过程</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>文件系统边界设置</td>
+</tr>
+<tr>
+<td>-k</td>
+<td>保留原有文件不覆盖</td>
+</tr>
+<tr>
+<td>-m</td>
+<td>保留文件不被覆盖</td>
+</tr>
+<tr>
+<td>-w</td>
+<td>确认压缩文件的正确性</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>保留原来的文件权限与属性</td>
+</tr>
+<tr>
+<td>-P</td>
+<td>使用文件名的绝对路径，不移除文件名称前的“/”号</td>
+</tr>
+<tr>
+<td>-N &lt;日期格式&gt;</td>
+<td>只将较指定日期更新的文件保存到备份文件里</td>
+</tr>
+<tr>
+<td>-- -exclude=&lt;范本样式&gt;</td>
+<td>排除符合范本样式的文件</td>
+</tr>
+<tr>
+<td>-- -remove-files</td>
+<td>归档/压缩之后删除源文件</td>
+</tr>
+</tbody>
+</table>
+<p><strong>参考实例</strong></p>
+<p>使用gzip压缩格式对某个目录进行打包操作，显示压缩过程，压缩包规范后缀为.tar.gz：</p>
+<pre><code class="language-bash">[root@Linux ~]# tar czvf nnn.tar.gz /etc  #将etc目录下压缩为nnn.tar.gz
+tar: Removing leading `/' from member names
+/etc/
+/etc/mtab
+/etc/fstab
+/etc/crypttab
+/etc/resolv.conf
+/etc/dnf/
+………………省略部分输出信息………………
+</code></pre>
+<p>使用<strong>bzip2</strong>压缩格式对某个目录进行打包操作，显示压缩过程，<strong>压缩包规范后缀为.tar.bz2</strong>：</p>
+<pre><code class="language-bash">[root@Linux ~]# tar cjvf name.tar.bz2 /etc
+tar: Removing leading `/' from member names
+/etc/
+/etc/mtab
+/etc/fstab
+/etc/crypttab
+/etc/resolv.conf
+/etc/dnf/
+/etc/dnf/modules.d/
+/etc/dnf/modules.d/container-tools.module
+………………省略部分输出信息………………
+</code></pre>
+<p>将当前工作目录内所有以.cfg为后缀的文件打包，不进行压缩：</p>
+<pre><code class="language-bash">[root@Linux ~]# tar cvf backup1.tar *.cfg
+anaconda-ks.cfg
+initial-setup-ks.cfg
+</code></pre>
+<p>将当前工作目录内的所有以.cfg为后缀的文件打包，不进行压缩，并删除原始文件：</p>
+<pre><code class="language-bash">[root@Linux ~]# tar cvf backup2.tar *.cfg --remove-files
+anaconda-ks.cfg
+initial-setup-ks.cfg
+</code></pre>
+<p>解压某个压缩包到当前工作目录：</p>
+<pre><code class="language-bash">[root@Linux ~]# tar xvf backup1.tar 
+anaconda-ks.cfg
+initial-setup-ks.cfg
+</code></pre>
+<p>解压某个压缩包到/etc目录：</p>
+<pre><code class="language-bash">[root@Linux ~]# tar xvf backup2.tar -C /etc
+anaconda-ks.cfg
+initial-setup-ks.cfg
+</code></pre>
+<p>查看某个压缩包内文件信息（无需解压）：</p>
+<pre><code class="language-bash">[root@Linux ~]# tar tvf backup3.tar 
+-rw------- root/root      1256 2022-05-18 08:42 anaconda-ks.cfg
+-rw-r--r-- root/root      1585 2025-05-18 08:43 initial-setup-ks.cfg
+</code></pre>
+<h2 id="zip命令-压缩文件">zip命令 – 压缩文件</h2>
+<p>zip命令的功能是用于压缩文件，解压命令为unzip。通过zip命令可以将文件打包成.zip格式的压缩包，里面会附含文件的名称、路径、创建时间、上次修改时间等等信息，与tar命令相似。</p>
+<p>**语法格式：**zip [参数] [文件]</p>
+<p><strong>常用参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th>-q</th>
+<th>不显示指令执行过程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-r</td>
+<td>递归处理，将指定目录下的所有文件和子目录一并处理</td>
+</tr>
+<tr>
+<td>-z</td>
+<td>替压缩文件加上注释</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示指令执行过程或显示版本信息</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>更新压缩包内文件</td>
+</tr>
+<tr>
+<td>-n&lt;字尾字符串&gt;</td>
+<td>不压缩具有特定字尾字符串的文件</td>
+</tr>
+</tbody>
+</table>
+<p><strong>参考实例</strong></p>
+<p>将指定目录及其内全部文件都打包成zip格式压缩包文件：</p>
+<pre><code class="language-bash">[root@Linux ~]# zip -r backup1.zip /etc
+  adding: etc/fstab (deflated 45%)
+  adding: etc/crypttab (stored 0%)
+  adding: etc/resolv.conf (stored 0%)
+  adding: etc/dnf/ (stored 0%)
+  adding: etc/dnf/modules.d/ (stored 0%)
+  adding: etc/dnf/modules.d/container-tools.module (deflated 17%)
+  adding: etc/dnf/modules.d/llvm-toolset.module (deflated 14%)
+………………省略部分输出信息………………
+</code></pre>
+<p>将当前工作目录内所有以.cfg为后缀的文件打包：</p>
+<pre><code class="language-bash">[root@Linux ~]# zip -r backup2.zip *.cfg
+  adding: anaconda-ks.cfg (deflated 44%)
+  adding: initial-setup-ks.cfg (deflated 44%)
+</code></pre>
+<p>更新压缩包文件中某个文件：</p>
+<pre><code class="language-bash">[root@Linux ~]# zip -dv backup2.zip anaconda-ks.cfg 
+1&gt;1: updating: anaconda-ks.cfg (deflated 44%)
+</code></pre>
+<h2 id="fdisk命令-管理磁盘分区">fdisk命令 – 管理磁盘分区</h2>
+<p>fdisk命令来自于英文词组“Partition table manipulator for Linux”的缩写，其功能是用于管理磁盘的分区信息。fdisk命令可以用于对磁盘进行分区操作，用户可以根据实际情况进行合理划分，这样后期挂载和使用时会方便很多。</p>
+<p>**语法格式：**fdisk [参数] [设备]</p>
+<p><strong>常用参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th>-b</th>
+<th>指定每个分区的大小</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-l</td>
+<td>列出指定的外围设备的分区表状况</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>将指定的分区大小输出到标准输出上，单位为区块</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>搭配”-l”参数列表，会用分区数目取代柱面数目，来表示每个分区的起始地址</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示版本信息</td>
+</tr>
+</tbody>
+</table>
+<p><strong>参考实例</strong></p>
+<p>查看当前系统的分区情况：</p>
+<pre><code class="language-bash">[root@Linux ~]# fdisk -l
+Disk /dev/sda: 40 GiB, 42949672960 bytes, 83886080 sectors
+Disk model: VMware Virtual S
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x7b1c23a3
+
+Device     Boot    Start      End  Sectors  Size Id Type
+/dev/sda1  *        2048 81885183 81883136   39G 83 Linux
+/dev/sda2       81887230 83884031  1996802  975M  5 Extended
+/dev/sda5       81887232 83884031  1996800  975M 82 Linux swap / Solaris
+</code></pre>
+<h2 id="df命令-显示磁盘空间使用情况">df命令 – 显示磁盘空间使用情况</h2>
+<p>df命令来自于英文词组”Disk Free“的缩写，其功能是用于显示系统上磁盘空间的使用量情况。df命令显示的磁盘使用量情况含可用、已有及使用率等信息，默认单位为Kb，建议使用-h参数进行单位换算，毕竟135M比138240Kb更利于阅读对吧~</p>
+<p><strong>语法格式：</strong> df [参数] [对象磁盘/分区]</p>
+<p><strong>常用参数：</strong></p>
+<table>
+<thead>
+<tr>
+<th>-a</th>
+<th>显示所有系统文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-B &lt;块大小&gt;</td>
+<td>指定显示时的块大小</td>
+</tr>
+<tr>
+<td>-h</td>
+<td>以容易阅读的方式显示</td>
+</tr>
+<tr>
+<td>-H</td>
+<td>以1000字节为换算单位来显示</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>显示索引字节信息</td>
+</tr>
+<tr>
+<td>-k</td>
+<td>指定块大小为1KB</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>只显示本地文件系统</td>
+</tr>
+<tr>
+<td>-t &lt;文件系统类型&gt;</td>
+<td>只显示指定类型的文件系统</td>
+</tr>
+<tr>
+<td>-T</td>
+<td>输出时显示文件系统类型</td>
+</tr>
+<tr>
+<td>-- -sync</td>
+<td>在取得磁盘使用信息前，先执行sync命令</td>
+</tr>
+</tbody>
+</table>
+<p><strong>参考实例</strong></p>
+<p>带有容量单位的显示系统全部磁盘使用量情况：</p>
+<pre><code class="language-bash">[root@Linux ~]# df -h
+Filesystem             Size  Used Avail Use% Mounted on
+devtmpfs               969M     0  969M   0% /dev
+tmpfs                  984M     0  984M   0% /dev/shm
+tmpfs                  984M  9.6M  974M   1% /run
+tmpfs                  984M     0  984M   0% /sys/fs/cgroup
+/dev/mapper/rhel-root   17G  3.9G   14G  23% /
+/dev/sr0               6.7G  6.7G     0 100% /media/cdrom
+/dev/sda1             1014M  152M  863M  15% /boot
+tmpfs                  197M   16K  197M   1% /run/user/42
+tmpfs                  197M  3.5M  194M   2% /run/user/0
+</code></pre>
+<p>带有容量单位的显示指定磁盘分区使用量情况：</p>
+<pre><code class="language-bash">[root@Linux ~]# df -h /boot
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1      1014M  152M  863M  15% /boot
+</code></pre>
+<p>显示系统中所有文件系统格式为xfs的磁盘分区使用量情况：</p>
+<pre><code class="language-bash">[root@Linux ~]# df -t xfs
+Filesystem            1K-blocks    Used Available Use% Mounted on
+/dev/mapper/rhel-root  17811456 4041320  13770136  23% /
+/dev/sda1               1038336  155556    882780  15% /boot
+</code></pre>
+<p> 
+<h2 id="参考书籍linux就该这么学-刘遄">参考书籍：<a href="https://www.aliyundrive.com/s/VX8xQV7EQCs">《Linux就该这么学-刘遄》</a></h2>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#ls%E5%91%BD%E4%BB%A4-%E6%98%BE%E7%A4%BA%E6%8C%87%E5%AE%9A%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E6%96%87%E4%BB%B6%E5%8F%8A%E5%B1%9E%E6%80%A7%E4%BF%A1%E6%81%AF">ls命令 – 显示指定工作目录下的文件及属性信息</a></li>
+<li><a href="#cp%E5%91%BD%E4%BB%A4-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95">cp命令 – 复制文件或目录</a></li>
+<li><a href="#mkdir%E5%91%BD%E4%BB%A4-%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6">mkdir命令 – 创建目录文件</a></li>
+<li><a href="#mv%E5%91%BD%E4%BB%A4-%E7%A7%BB%E5%8A%A8%E6%88%96%E6%94%B9%E5%90%8D%E6%96%87%E4%BB%B6">mv命令 – 移动或改名文件</a></li>
+<li><a href="#touch%E5%91%BD%E4%BB%A4-%E5%88%9B%E5%BB%BA%E7%A9%BA%E6%96%87%E4%BB%B6%E4%B8%8E%E4%BF%AE%E6%94%B9%E6%97%B6%E9%97%B4%E6%88%B3">touch命令 – 创建空文件与修改时间戳</a></li>
+<li><a href="#rm%E5%91%BD%E4%BB%A4-%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95">rm命令 – 删除文件或目录</a></li>
+<li><a href="#rmdir%E5%91%BD%E4%BB%A4-%E5%88%A0%E9%99%A4%E7%A9%BA%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6">rmdir命令 – 删除空目录文件</a></li>
+<li><a href="#apt-get%E5%91%BD%E4%BB%A4-%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1%E8%BD%AF%E4%BB%B6%E5%9F%BA%E4%BA%8Edebian%E5%88%86%E6%94%AF">apt-get命令 – 管理服务软件(基于Debian分支)</a></li>
+<li><a href="#yum%E5%91%BD%E4%BB%A4-rpm%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E5%9F%BA%E4%BA%8Ered-hat%E5%88%86%E6%94%AF">yum命令 – RPM的软件包管理器(基于Red-Hat分支)</a></li>
+<li><a href="#dnf%E5%91%BD%E4%BB%A4-%E6%96%B0%E4%B8%80%E4%BB%A3%E7%9A%84rpm%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8">dnf命令 – 新一代的RPM软件包管理器</a></li>
+<li><a href="#pwd%E5%91%BD%E4%BB%A4-%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95%E7%9A%84%E8%B7%AF%E5%BE%84">pwd命令 – 显示当前工作目录的路径</a></li>
+<li><a href="#dpkg%E5%91%BD%E4%BB%A4-%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8C%85">dpkg命令 – 管理软件安装包</a></li>
+<li><a href="#mmove%E5%91%BD%E4%BB%A4-%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95">mmove命令 – 移动文件或目录</a></li>
+<li><a href="#file%E5%91%BD%E4%BB%A4-%E8%AF%86%E5%88%AB%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B">file命令 – 识别文件类型</a></li>
+<li><a href="#tar%E5%91%BD%E4%BB%A4-%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6">tar命令 – 压缩和解压缩文件</a></li>
+<li><a href="#zip%E5%91%BD%E4%BB%A4-%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6">zip命令 – 压缩文件</a></li>
+<li><a href="#fdisk%E5%91%BD%E4%BB%A4-%E7%AE%A1%E7%90%86%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA">fdisk命令 – 管理磁盘分区</a></li>
+<li><a href="#df%E5%91%BD%E4%BB%A4-%E6%98%BE%E7%A4%BA%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5">df命令 – 显示磁盘空间使用情况</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E4%B9%A6%E7%B1%8Dlinux%E5%B0%B1%E8%AF%A5%E8%BF%99%E4%B9%88%E5%AD%A6-%E5%88%98%E9%81%84">参考书籍：《Linux就该这么学-刘遄》</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://KA-ASLant.GitHub.io/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://KA-ASLant.GitHub.io/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+  
+</body>
+
+</html>
