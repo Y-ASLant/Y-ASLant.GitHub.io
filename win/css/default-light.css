@@ -1,0 +1,519 @@
+:root {
+    --scrollbar-track-color: rgba(95, 97, 101, 0.3);
+    --text-color1: black;
+    --bg-color: #f5f5f5;
+    --text-color3: black;
+    --bg-color5: #e9e9e9;
+    --active-color: black;
+    --table-thead-color: #dfe2e5;
+    --table-border-color: #f8f8f8;
+    --menu-hover: rgb(211, 211, 211);
+}
+
+* {
+    font-family: 'LXGW', Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial,
+        sans-serif;
+}
+
+
+/* 首次加载 */
+.loading {
+    color: var(--active-color);
+    background-color: var(--bg-color);
+}
+
+/* 加载小球 */
+.loading p::before {
+    background-color: var(--active-color);
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+    width: 5px;
+    padding-right: 10px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-track:hover {
+    background-color: var(--scrollbar-track-color) !important;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:active {
+    background-color: var(--active-color) !important;
+    border-radius: 4px;
+}
+
+/* 左侧目录树背景 与 阴影 */
+.leftMenu {
+    color: var(--text-color1);
+    background-color: var(--bg-color);
+    box-shadow: 3px 0 3px rgba(0, 0, 0, 0.2);
+}
+
+/* 目录右下角菜单 */
+.bottomMenu>div,
+.bottomMenu>div::before {
+    color: var(--text-color1);
+    background-color: var(--bg-color);
+    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* 加载遮罩背景颜色 */
+.el-loading-mask {
+    background-color: rgba(212, 212, 212, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+/* 加载图标颜色 */
+.el-loading-spinner .path {
+    stroke: var(--active-color);
+}
+
+/* 加载文字颜色 */
+.el-input-number__decrease:hover,
+.el-input-number__increase:hover,
+.el-loading-spinner .el-loading-text,
+.el-loading-spinner i {
+    color: var(--active-color);
+}
+
+/* 左侧目录菜单字体颜色 */
+.el-tabs__item {
+    color: var(--text-color3);
+}
+
+/* 左侧目录菜单字体 选中颜色 */
+.el-tabs__item.is-active,
+.el-tabs__item:hover {
+    color: var(--text-color1);
+}
+
+/* 左侧目录菜单线条颜色 */
+.el-tabs__nav-wrap::after {
+    background-color: var(--bg-color5);
+}
+
+/* 左侧目录菜单线条 选中颜色 */
+.el-tabs__active-bar {
+    background-color: var(--text-color1);
+}
+
+/* 左侧顶部跳转仓库 */
+.treesHead a {
+    color: var(--text-color1);
+}
+
+/* 笔记悬浮样式 */
+.treesItem:hover {
+    opacity: 1;
+    border-left: 5px solid var(--active-color);
+}
+
+/* 选中笔记样式 */
+.treesItemActive {
+    opacity: 1;
+    background-color: var(--bg-color5);
+    border-left: 5px solid var(--active-color);
+}
+
+/* 目录未选中 */
+.contentItem {
+    opacity: 0.5;
+}
+
+/* 目录选中 */
+.contentItemActive {
+    opacity: 1;
+    font-weight: bold;
+}
+
+/* 内容页 */
+.content {
+    background-color: var(--bg-color);
+    color: var(--text-color1);
+}
+
+/* .content 编辑器样式 */
+.content a {
+    color: #4183c4;
+    position: relative;
+}
+
+.content a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    background-color: #4183c4;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.content a:hover::after {
+    width: 100%;
+}
+
+.content img {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.content img:hover {
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+    position: relative;
+    margin-top: 0.05rem;
+    margin-bottom: 0.05rem;
+    padding: 0px 0;
+    font-weight: bold;
+
+    cursor: text;
+}
+
+.content h1:hover a.anchor,
+.content h2:hover a.anchor,
+.content h3:hover a.anchor,
+.content h4:hover a.anchor,
+.content h5:hover a.anchor,
+.content h6:hover a.anchor {
+    text-decoration: none;
+}
+
+.content h1 tt,
+.content h1 code {
+    font-size: inherit;
+}
+
+.content h2 tt,
+.content h2 code {
+    font-size: inherit;
+}
+
+.content h3 tt,
+.content h3 code {
+    font-size: inherit;
+}
+
+.content h4 tt,
+.content h4 code {
+    font-size: inherit;
+}
+
+.content h5 tt,
+.content h5 code {
+    font-size: inherit;
+}
+
+.content h6 tt,
+.content h6 code {
+    font-size: inherit;
+}
+
+.content h1 {
+    font-size: 2.25em;
+
+}
+
+.content h2 {
+    font-size: 2em;
+
+}
+
+.content h3 {
+    font-size: 1.75em;
+}
+
+.content h4 {
+    font-size: 1.5em;
+}
+
+.content h5 {
+    font-size: 1.25em;
+}
+
+.content h6 {
+    font-size: 1em;
+}
+
+.content p,
+.content blockquote,
+.content ul,
+.content ol,
+.content dl,
+.content table {
+    margin: 0.3rem 0;
+}
+
+.content li>ol,
+.content li>ul {
+    margin: 0 0;
+}
+
+.content hr {
+    height: 1.2px;
+    padding: 0;
+    margin: 5px 0;
+    background-color: #bebebe;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+.content li p.first {
+    display: inline-block;
+}
+
+.content ul,
+.content ol {
+    padding-left: 1.1rem;
+}
+
+.content ul:first-child,
+.content ol:first-child {
+    margin-top: 0;
+}
+
+.content ul:last-child,
+.content ol:last-child {
+    margin-bottom: 0;
+}
+
+.content blockquote {
+    border-left: 4px solid var(--active-color);
+    padding: 0 15px;
+    color: #777777;
+}
+
+.content blockquote blockquote {
+    padding-right: 0;
+}
+
+.content table {
+    padding: 0;
+    word-break: initial;
+    border-collapse: collapse;
+}
+
+.content table thead tr {
+    background-color: var(--table-thead-color);
+}
+
+.content table tr th {
+    font-weight: bold;
+    border-left: 2px solid var(--table-border-color);
+    border-right: 2px solid var(--table-border-color);
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+.content table tbody tr {
+    border-top: 2px solid var(--table-border-color);
+    margin: 0;
+    padding: 0;
+}
+
+.content table tbody tr:nth-child(2n) {
+    background-color: var(--bg-color5);
+}
+
+.content table tbody tr:nth-child(2n + 1) {
+    background-color: var(--bg-color5);
+}
+
+.content table tr td {
+    border-left: 2px solid var(--table-border-color);
+    border-right: 2px solid var(--table-border-color);
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+.content table tr th:first-child,
+.content table tr td:first-child {
+    border-left-width: 0px;
+}
+
+.content table tr th:last-child,
+.content table tr td:last-child {
+    border-right-width: 0px;
+}
+
+.content code,
+.content tt {
+    background-color: var(--bg-color5);
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.85em;
+}
+
+.content code {
+    background-color: var(--bg-color5);
+    padding: 0 2px 0 2px;
+}
+
+.content p code {
+    font-size: 0.9em;
+    background-color: var(--bg-color5);
+    padding: 0.3em;
+    padding-top: 0.15em;
+    padding-bottom: 0.15em;
+    border-radius: 0.25rem;
+}
+
+.content pre {
+    background-color: var(--bg-color5);
+    border-radius: 5px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.content kbd {
+    background: var(--bg-color5);
+    color: var(--text-color1);
+    box-shadow: 0 3px 0 var(--scrollbar-track-color);
+    padding: 2px 8px;
+    margin: 0 3px;
+}
+
+/* 代码高亮 */
+pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 1em;
+}
+
+code.hljs {
+    padding: 3px 5px;
+}
+
+.hljs {
+    color: #333;
+    background: #fff;
+}
+
+.hljs ::selection {
+    color: #c8c8fa;
+}
+
+.hljs-comment {
+    color: #969896;
+}
+
+.hljs-tag {
+    color: #969896;
+}
+
+.hljs-operator,
+.hljs-punctuation,
+.hljs-subst {
+    color: #333;
+}
+
+.hljs-operator {
+    opacity: 0.7;
+}
+
+.hljs-bullet,
+.hljs-deletion,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-template-variable,
+.hljs-variable {
+    color: #ed6a43;
+}
+
+.hljs-attr,
+.hljs-link,
+.hljs-literal,
+.hljs-number,
+.hljs-symbol,
+.hljs-variable.constant_ {
+    color: #0086b3;
+}
+
+.hljs-class .hljs-title,
+.hljs-title,
+.hljs-title.class_ {
+    color: #795da3;
+}
+
+.hljs-strong {
+    font-weight: 700;
+    color: #795da3;
+}
+
+.hljs-addition,
+.hljs-built_in,
+.hljs-code,
+.hljs-doctag,
+.hljs-keyword.hljs-atrule,
+.hljs-quote,
+.hljs-regexp,
+.hljs-string,
+.hljs-title.class_.inherited__ {
+    color: #183691;
+}
+
+.hljs-attribute,
+.hljs-function .hljs-title,
+.hljs-section,
+.hljs-title.function_,
+.ruby .hljs-property {
+    color: #795da3;
+}
+
+.diff .hljs-meta,
+.hljs-keyword,
+.hljs-template-tag,
+.hljs-type {
+    color: #a71d5d;
+}
+
+.hljs-emphasis {
+    color: #a71d5d;
+    font-style: italic;
+}
+
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-meta .hljs-string {
+    color: #333;
+}
+
+.hljs-meta .hljs-keyword,
+.hljs-meta-keyword {
+    font-weight: 700;
+}
+
+code ul li::marker {
+    color: gray;
+}
+
+p {
+    line-height: 1.5rem;
+}

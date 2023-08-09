@@ -1,0 +1,198 @@
+.container-price {
+    margin-top: 4rem;
+}
+.banner {
+    width: 100%;
+    height: 25.35rem;
+    position: relative;
+}
+.banner .banner-bg {
+    object-fit: cover;
+    height: 25.35rem;
+    width: 100%;
+}
+.banner .banner-title {
+    position: absolute;
+    top: 6.1rem;
+    height: 6rem;
+}
+.banner .banner-btn{
+    position: absolute;
+    bottom: 6rem;
+    height: 2.5rem;
+    width: 9.5rem;
+    border-radius: 1.25rem;
+    background: white;
+    color: #080D0F;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.group-price {
+    width: 100%;
+    height: 35.7rem;
+    position: relative;
+}
+.group-price .group-price-bg {
+    min-width: 100%;
+    min-height: 41.4rem;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    z-index: -1;
+}
+.group-price-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64rem;
+    margin-top: 3rem;
+}
+.group-price-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 18rem;
+    height: 17.5rem;
+    border-radius: 0.5rem;
+    background: white;
+    box-shadow: 0 0 1.3rem 0 rgba(243,245,249,1);
+    overflow: hidden;
+    margin: 0 0.6rem;
+    transition: all .3s;
+}
+.group-price-item:hover {
+    transform: translateY(-8px);
+}
+.group-price-top {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 11.5rem;
+}
+.group-price-top.y {
+    background: url("../img/price-A.png") no-repeat;
+}
+.group-price-top.r {
+    background: url("../img/price-B.png") no-repeat;
+}
+.group-price-top.b {
+    background: url("../img/price-C.png") no-repeat;
+}
+.group-price-top span:nth-child(1) {
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 2rem;
+    font-weight: bold;
+}
+.group-price-top span:nth-child(2) {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin-top: 2.3rem;
+}
+.group-price-top span:nth-child(3) {
+    font-size: 0.8rem;
+    color: white;
+    margin-top: 1rem;
+}
+.group-price-btn {
+    width: 8rem;
+    height: 2.2rem;
+    border-radius: 1.1rem;
+    line-height: 2.2rem;
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 1.9rem;
+    box-shadow: 0 3px 8px 0 rgba(227,232,242,1);
+}
+.group-price-btn.y {
+    background:linear-gradient(90deg,rgba(246,205,137,1) 0%,rgba(219,169,106,1) 100%);
+}
+.group-price-btn.r {
+    background:linear-gradient(90deg,rgba(255,120,153,1) 0%,rgba(239,51,76,1) 100%);
+}
+.group-price-btn.b {
+    background:linear-gradient(90deg,rgba(127,216,255,1) 0%,rgba(32,150,255,1) 100%);
+}
+
+.increase-package {
+    width: 100%;
+    min-height: 34.5rem;
+}
+.increase-package-list {
+    display: flex;
+    flex-direction: column;
+    width: 51.9rem;
+    height: 17.2rem;
+    background: white;
+    margin-top: 4rem;
+}
+.increase-package-header {
+    width: 100%;
+    height: 4rem;
+    background: linear-gradient(94deg,rgba(127,217,255,1) 0%,rgba(69,135,255,1) 51%,rgba(50,110,255,1) 100%);
+    text-align: center;
+    line-height: 4rem;
+    font-size: 1.1rem;
+    color: white;
+    border-radius: 0.6rem 0.6rem 0 0;
+}
+.package-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 0 0 0.6rem 0.6rem;
+    box-sizing: border-box;
+    border-right: 1px solid #BCD3FE;
+    border-left: 1px solid #BCD3FE;
+    border-bottom: 1px solid #BCD3FE;
+}
+.package-item {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #BCD3FE;
+    box-sizing: border-box;
+}
+.package-item:last-child {
+    border-right: unset;
+}
+.package-item span:nth-child(1) {
+    font-size: 1.3rem;
+    color: black;
+    margin-top: 3rem;
+}
+.package-item span:nth-child(2) {
+    font-size: 1.2rem;
+    color: #3276FF;
+    font-weight: bold;
+    margin-top: 1.1rem;
+}
+.package-item span:nth-child(3) {
+    font-size: 1.1rem;
+    color: #BCBCBC;
+    margin-top: 2.75rem;
+}
+
+.contact-view .contact-btn {
+    width: 10rem;
+    height: 2.5rem;
+    background: white;
+    border-radius: 1.25rem;
+    font-size: 1rem;
+    color: #504DE5;
+    margin-top: 7.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}

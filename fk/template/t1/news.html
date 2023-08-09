@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>平台公告-[webtitle]</title>
+   <meta name="keywords" content="[keyword]" />
+   <meta name="description" content="[description]" />
+   <link rel="shortcut icon" href="media/[ico]" />
+   <!--Favicon img-->
+   <link rel="shortcut icon" href="template/t1/assets/img/favicon/favicon.png">
+   <!--Bootstarp min css-->
+   <link rel="stylesheet" href="template/t1/assets/css/bootstrap.min.css">
+   <!--Bootstarp map css-->
+   <link rel="stylesheet" href="template/t1/assets/css/bootstrap.css.map">
+   <!--Odometer css-->
+   <link rel="stylesheet" href="template/t1/assets/css/odometer.css">
+   <!--All min css-->
+   <link rel="stylesheet" href="template/t1/assets/css/all.min.css">
+   <!--Animate css-->
+   <link rel="stylesheet" href="template/t1/assets/css/animate.css">
+   <!--Owl Nice select css-->
+   <link rel="stylesheet" href="template/t1/assets/css/nice-select.css">
+   <!--main css-->
+   <link rel="stylesheet" href="template/t1/assets/css/main.css">
+</head>
+
+<body>
+[header]
+<!--Hero Here-->
+   <section class="hero-section hero-breadcumnd">
+      <div class="container">
+         <div class="row align-items-center">
+            <div class="col-xxl-7 col-lg-7 wow fadeInUp" data-wow-delay="0.2s">
+               <div class="breadcumnd-content">
+                  <h1>
+                     平台公告
+                  </h1>
+                  <ul class="breadcrumb-light">
+                     <li>
+                        <a href="./">
+                           首页
+                        </a>
+                     </li>
+                     <li>
+                        /
+                     </li>
+                     
+                     <li>
+                        平台公告
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-xxl-6 col-lg-5">
+               
+            </div>
+         </div>
+      </div>
+      <div class="banner-shape1">
+         <img src="template/t1/assets/img/banner/b-shape1.png" alt="b-shape">
+      </div>
+      <div class="banner-shape4">
+         <img src="template/t1/assets/img/banner/drop.png" alt="b-shape">
+      </div>
+   </section>
+<!--Hero End-->
+
+<!--BLog Here-->
+   <section class="blog-section pt-120 pb-120">
+      <div class="container">
+
+         <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-9">
+               <div class="blog-left-wrapper">
+                  <div class="container p-0">
+                     <div class="row gy-0" style="color:#231d70">
+                        
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="col-lg-4 col-md-9">
+               <div class="blog-right-wrapper">
+                  <h4 class="latest">
+                     平台公告
+                  </h4>
+                  <ul class="post-wrapper">
+
+                  </ul>
+               </div>
+               
+            </div>
+         </div>
+      </div>
+   </section>
+<!--BLog End-->
+
+    [footer]
+
+
+   <!--Jquery 3 6 0 Min Js-->
+   <script src="template/t1/assets/js/jquery-3.6.0.min.js"></script>
+   <!--Bootstrap bundle Js-->
+   <script src="template/t1/assets/js/bootstrap.bundle.js"></script>
+   <!--Waypoint Jquery min Js-->
+   <script src="template/t1/assets/js/jquery.waypoints.min.js"></script>
+   <!--Viewport Jquery Js-->
+   <script src="template/t1/assets/js/viewport.jquery.js"></script>
+   <!--Wow min Js-->
+   <script src="template/t1/assets/js/wow.min.js"></script>
+   <!--Odometer Up min Js-->
+   <script src="template/t1/assets/js/odometer.min.js"></script>
+   <!--Owl nice Jquery min Js-->
+   <script src="template/t1/assets/js/jquery.nice-select.min.js"></script> 
+   <!--main Js-->
+   <script src="template/t1/assets/js/main.js"></script>
+   <script>
+                     
+   news(0);
+   var list="";
+       $.ajax({
+            url: 'template/t1/ajax.php?action=news_list',
+            type: 'get',
+            success: function(data) {
+                data = JSON.parse(data);
+                for(i=0;i<data.length;i++){
+                    list=list+'<li><div class="thumb"><img src="media/[ico]" alt="blog-img" onclick="news('+data[i]["N_id"]+')" style="cursor:pointer"></div><a href="javascript:;" onclick="news('+data[i]["N_id"]+')">'+data[i]["N_title"]+'</a></li>';
+                }
+                $(".post-wrapper").html(list);
+            }
+        });
+        function news(id){
+            $.ajax({
+            url: 'template/t1/ajax.php?action=news&id='+id,
+            type: 'get',
+            success: function(data) {
+                data = JSON.parse(data);
+                $(".gy-0").html("<h4>"+data["N_title"]+"</h4><div style=\"font-weight:bold;margin-bottom:20px\">发布时间："+data["N_date"]+" 作者："+data["N_author"]+"</div><hr><div>"+data["N_content"]+"</div>");
+            }
+        });
+        }
+   </script>
+</body>
+
+</html>

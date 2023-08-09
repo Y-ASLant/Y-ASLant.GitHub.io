@@ -1,0 +1,28 @@
+html{height: 100%}
+body{background: url("../../../../template/s4/static/img/bg.jpg");background-size:cover; background-position: center center;background-attachment: fixed;height: 100%}
+.main{max-width: 800px;width:100%;margin: 0px auto;}
+.top{background:url("../../../../template/s4/static/img/top.jpg");background-position: center center;height: 200px;margin: 0 10px 10px 10px;box-shadow: 0 0 12px rgb(69 79 102 / 20%);}
+.body{margin:10px;box-shadow: 0 0 12px rgb(69 79 102 / 20%);background: rgba(255,255,255,0.1);padding: 20px;backdrop-filter:blur(10px)}
+.tab{width: 50%;text-align: center;display: inline-block;border-bottom: solid 2px #DDD;padding-bottom: 10px;font-weight: bold;cursor: pointer;}
+.tab_active{width: 50%;text-align: center;display: inline-block;border-bottom: solid 2px #492DD9;padding-bottom: 10px;font-weight: bold;cursor: pointer;color: #492DD9}
+.t{margin-top: -10px}
+::-webkit-scrollbar {
+width:7px;
+height: 3px;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+-webkit-box-shadow:inset006pxrgba(0,0,0,0.3);
+border-radius:7px;
+
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+border-radius:7px;
+background:rgba(0,0,0,0.2);
+-webkit-box-shadow:inset006pxrgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+background:rgba(0,0,0,0.4);
+
+}
