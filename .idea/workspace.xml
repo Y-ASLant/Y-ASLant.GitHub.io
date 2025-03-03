@@ -1,31 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0a39adc4-e9cc-4126-9f7a-7961dadf6488" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.npmrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.zh-CN.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/client.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/navbar.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/notes.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/plume.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/public/plume.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/theme/components/Custom.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/theme/shim.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vuepress/theme/styles/custom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/notes/demo/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/notes/demo/bar.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/notes/demo/foo.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/preview/custom-component.example.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/preview/markdown.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +27,10 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.docs:build.executor": "Run",
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.控制台字体",
@@ -87,7 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1740921747586</updated>
       <workItem from="1740921748730" duration="49000" />
-      <workItem from="1741016141815" duration="116000" />
+      <workItem from="1741016141815" duration="523000" />
     </task>
     <servers />
   </component>
