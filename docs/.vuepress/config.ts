@@ -3,14 +3,14 @@ import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
 
 export default defineUserConfig({
-  base: '/',
+  base: '/Note/',
   lang: 'zh-CN',
   title: 'ASLant',
   description: '',
 
   head: [
     // 配置站点图标
-    ['link', { rel: 'icon', type: 'image/png', href: 'https://theme-plume.vuejs.press/favicon-32x32.png' }],
+    ['link', { rel: 'icon', type: 'image/x-icon', href: 'https://aslant.top/favicon.ico' }],
   ],
 
   bundler: viteBundler(),
