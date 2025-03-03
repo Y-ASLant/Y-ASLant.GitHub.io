@@ -33,12 +33,13 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.docs:build.executor": "Run",
+    "npm.docs:dev.executor": "Run",
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.控制台字体",
     "ts.external.directory.path": "E:\\仓库\\Y-ASLant.GitHub.io\\blog\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.docs:dev">
     <configuration name="docs:build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/blog/package.json" />
       <command value="run" />
@@ -49,8 +50,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="docs:dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/blog/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="docs:dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.docs:dev" />
         <item itemvalue="npm.docs:build" />
       </list>
     </recent_temporary>
@@ -71,7 +83,7 @@
       <option name="presentableId" value="Default" />
       <updated>1740921747586</updated>
       <workItem from="1740921748730" duration="49000" />
-      <workItem from="1741016141815" duration="523000" />
+      <workItem from="1741016141815" duration="1422000" />
     </task>
     <servers />
   </component>
