@@ -58,11 +58,11 @@ export default defineUserConfig({
      * 为 markdown 文件自动添加 frontmatter 配置
      * @see https://theme-plume.vuejs.press/config/basic/#autofrontmatter
      */
-    // autoFrontmatter: {
-    //   permalink: true,  // 是否生成永久链接
-    //   createTime: true, // 是否生成创建时间
-    //   title: true,      // 是否生成标题
-    // },
+    autoFrontmatter: {
+      permalink: true,  // 是否生成永久链接
+      createTime: true, // 是否生成创建时间
+      title: true,      // 是否生成标题
+    },
 
     plugins: {
       /**
@@ -92,7 +92,7 @@ export default defineUserConfig({
       // },
 
       /* 文章字数统计、阅读时间，设置为 false 则禁用 */
-      // readingTime: true,
+      readingTime: true,
 
       /**
        * markdown enhance
@@ -138,12 +138,12 @@ export default defineUserConfig({
        * 为 Markdown 图像添加附加功能。
        * @see https://theme-plume.vuejs.press/config/plugins/markdown-image/
        */
-      // markdownImage: {
-      //   figure: true,       // 启用 figure
-      //   lazyload: true,     // 启用图片懒加载
-      //   mark: true,         // 启用图片标记
-      //   size: true,         // 启用图片大小
-      // },
+      markdownImage: {
+        figure: true,       // 启用 figure
+        lazyload: true,     // 启用图片懒加载
+        mark: true,         // 启用图片标记
+        size: true,         // 启用图片大小
+      },
 
       /**
        * 在 Markdown 文件中导入其他 markdown 文件内容。
@@ -155,9 +155,9 @@ export default defineUserConfig({
        * Markdown 数学公式
        * @see https://theme-plume.vuejs.press/config/plugins/markdown-math/
        */
-      // markdownMath: {
-      //   type: 'katex',
-      // },
+      markdownMath: {
+        type: 'katex',
+      },
 
       /**
        * 水印
@@ -186,6 +186,6 @@ export default defineUserConfig({
      * 加密功能
      * @see https://theme-plume.vuejs.press/guide/features/encryption/
      */
-    // encrypt: {},
+    encrypt: {},
   }),
 })
