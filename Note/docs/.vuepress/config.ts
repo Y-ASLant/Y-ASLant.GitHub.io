@@ -3,7 +3,7 @@ import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
 
 export default defineUserConfig({
-  base: '/Note/',
+  base: '/',
   lang: 'zh-CN',
   title: 'ASLant',
   description: '',
